@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <title>Arthrititis- Risk Test</title>
+    
+    <script type="text/javascript" src="js/utilities/jquery.js"></script>
+    <script type="text/javascript" src="js/view/ViewArthritisRiskTest.js"></script>
+    
+    <script src="js/Main.js"></script>    
+    <script src="js/view/MainView.js"></script>
+    <script src="js/controller/MainController.js"></script>
+    <script src="js/model/MainModel.js"></script>
+    <script src="js/model/BackendDataContainer.js"></script>
+    
+    <script type="text/javascript">
+    $(document).ready(function(){
+        main('ARTHRITIS_TEST');
+        
+        $('#btnBack').click(function(){
+            indexQuestion--;
+            setQuestion(indexQuestion);
+        });
+        
+        $('#btnNext').click(function(){
+            indexQuestion++;
+            setQuestion(indexQuestion);
+        });
+        
+        
+    });
+    </script>
+    
+    
+    <body>
+        <div>
+            <div id="divQuestion"></div>
+            <div id="divAnswer">
+                <input type=radio name="rdAnswer" value="Yes">Yes</input>
+                <input type=radio name="rdAnswer" value="No">No</input>
+            </div>
+        </div>
+        <div>
+            <input id="btnBack" type="button" value="Back"></input>
+            <input id="btnNext" type="button" value="Next"></input>
+        </div>
+    </body>
+</html>
