@@ -15,14 +15,31 @@
     $(document).ready(function(){
         main('ARTHRITIS_TEST');
         
-        $('#btnBack').click(function(){
+        $('#btnBack').click(function(e){
+            
+            /* if 'back' button is pressed on last question, change btnNext text */
+            if($('#btnNext').val().toUpperCase() == 'SHOW RESULT'){
+                $('#btnNext').val('Next')
+            }
+            
+            if($("input:radio[name='rdAnswer']").is(':checked')){
+                var boolIsSaved= saveAnswer(indexQuestion,$("input:radio[name='rdAnswer']:checked").val());
+            }
             indexQuestion--;
             setQuestion(indexQuestion);
         });
         
-        $('#btnNext').click(function(){
-            indexQuestion++;
-            setQuestion(indexQuestion);
+        $('#btnNext').click(function(e){
+            if($("input:radio[name='rdAnswer']").is(':checked')){
+                var boolIsSaved= saveAnswer(indexQuestion,$("input:radio[name='rdAnswer']:checked").val());
+                if(boolIsSaved){
+                    indexQuestion++;
+                    setQuestion(indexQuestion);
+                }
+            }
+            else{
+                alert('Select an option !!');
+            }
         });
         
         
@@ -34,8 +51,8 @@
         <div>
             <div id="divQuestion"></div>
             <div id="divAnswer">
-                <input type=radio name="rdAnswer" value="Yes">Yes</input>
-                <input type=radio name="rdAnswer" value="No">No</input>
+                <input type=radio name="rdAnswer" value="1">Yes</input>
+                <input type=radio name="rdAnswer" value="0">No</input>
             </div>
         </div>
         <div>
