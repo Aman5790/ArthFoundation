@@ -7,6 +7,7 @@ function ViewArthritisRiskTest(_Model, _Controller){
     this.controllerRef = _Controller;
     try{
         oArthritisQA= this.LoadArthritisQA();
+        this.setListActiveQuestionHint();
         setQuestion(indexQuestion);
     }
     catch(e){
@@ -17,6 +18,16 @@ function ViewArthritisRiskTest(_Model, _Controller){
 ViewArthritisRiskTest.prototype = {
     LoadArthritisQA: function(){
         return this.modelRef.allModels.insBackendDataContainer.getArthritisQA();
+    },
+    
+    setListActiveQuestionHint: function(){
+        if(oArthritisQA !=null && oArthritisQA.QA.length>0){
+            $('#ulActiveQuestionHint').html('');
+            for(var iQuesNo=0; iQuesNo< oArthritisQA.QA.length; iQuesNo++){
+                   $('#ulActiveQuestionHint').append('<li></li>');
+            }
+        }
+        
     }
 }
 
@@ -28,30 +39,36 @@ function setQuestion(index){
     else{
         if(oArthritisQA !=null && oArthritisQA.QA.length>0 ){
            if(oArthritisQA.QA.length >= index){
+               
+                /* Updates current question indicator */
+                $('#ulActiveQuestionHint li').removeClass('active');
+                $('#ulActiveQuestionHint li:eq('+(index-1)+')').addClass('active');
+               
                 /* Updates questions */
-                divQuestion.innerHTML= oArthritisQA.QA[index-1].Q;
+                $('#question').html(oArthritisQA.QA[index-1].Q);
 
                 /*Initializes Answer if available */
                 if(oArthritisQA.QA[index-1].A != 'NULL'){
-                    $("input:radio[name='rdAnswer'][value='"+oArthritisQA.QA[index-1].A+"']").prop("checked",true);
+                    $('#divButtonArea span').removeClass('pressed');
+                    $('#divButtonArea span[data-ans="'+oArthritisQA.QA[index-1].A+'"]').addClass('pressed');
                 }
                 /* else Resets Radio Buttons */
                 else{
-                    $("input:radio[name='rdAnswer']").prop('checked',false);
+                    $('#divButtonArea span').removeClass('pressed');
                 }
 
                 /* Enables/disable next/back buttons */
                 if(index >1){
-                    $('#btnBack').attr('disabled',false)
-                    $('#btnNext').attr('disabled',false)
+                    $('#spBack').show();
+                    $('#spNext').show();
                 }
                 if(index==1){
-                    $('#btnBack').attr('disabled',true)
-                    $('#btnNext').attr('disabled',false)
+                    $('#spBack').hide();
+                    $('#spNext').show();
                 }
                 if(index == oArthritisQA.QA.length){
-                    $('#btnBack').attr('disabled',false)
-                    $('#btnNext').val('Show Result')        // As no more question left, and it's time to show results.
+                    $('#spBack').show();
+                    $('#spNext').hide();        // As no more question left.
                 }
             }
             else{

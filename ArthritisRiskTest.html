@@ -1,63 +1,106 @@
 <!DOCTYPE html>
 <html>
-    <title>Arthrititis- Risk Test</title>
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/utilities/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/utilities/jquery.js"></script>
     
-    <script type="text/javascript" src="js/utilities/jquery.js"></script>
-    <script type="text/javascript" src="js/view/ViewArthritisRiskTest.js"></script>
+<script type="text/javascript" src="js/view/ViewArthritisRiskTest.js"></script>
+
+<script src="js/Main.js"></script>    
+<script src="js/view/MainView.js"></script>
+<script src="js/controller/MainController.js"></script>
+<script src="js/model/MainModel.js"></script>
+<script src="js/model/BackendDataContainer.js"></script>
     
-    <script src="js/Main.js"></script>    
-    <script src="js/view/MainView.js"></script>
-    <script src="js/controller/MainController.js"></script>
-    <script src="js/model/MainModel.js"></script>
-    <script src="js/model/BackendDataContainer.js"></script>
-    
-    <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function(){
         main('ARTHRITIS_TEST');
         
-        $('#btnBack').click(function(e){
+        $('#spYes').click(function(){
+            $('#divButtonArea span').removeClass('pressed');
+            $(this).addClass('pressed');
+        });
+                           
+        $('#spNo').click(function(){
+            $('#divButtonArea span').removeClass('pressed');
+            $(this).addClass('pressed');
+        });
+        
+        $('#spBack').click(function(){
             
-            /* if 'back' button is pressed on last question, change btnNext text */
-            if($('#btnNext').val().toUpperCase() == 'SHOW RESULT'){
-                $('#btnNext').val('Next')
-            }
-            
-            if($("input:radio[name='rdAnswer']").is(':checked')){
-                var boolIsSaved= saveAnswer(indexQuestion,$("input:radio[name='rdAnswer']:checked").val());
+            if($('#divButtonArea span').hasClass('pressed'))
+            {
+                var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
             }
             indexQuestion--;
             setQuestion(indexQuestion);
         });
         
-        $('#btnNext').click(function(e){
-            if($("input:radio[name='rdAnswer']").is(':checked')){
-                var boolIsSaved= saveAnswer(indexQuestion,$("input:radio[name='rdAnswer']:checked").val());
+        
+        $('#spNext').click(function(){
+            if($('#divButtonArea span').hasClass('pressed')){
+                var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
                 if(boolIsSaved){
                     indexQuestion++;
                     setQuestion(indexQuestion);
                 }
             }
             else{
-                alert('Select an option !!');
+                $('#divWrapWrapper').show();
+                $('#divAnsHint').addClass('showAnsHint');
             }
+        });
+        
+        $('#spOK').click(function(){
+                $('#divWrapWrapper').hide();
+                $('#divAnsHint').removeClass('showAnsHint');
         });
         
         
     });
-    </script>
-    
-    
-    <body>
-        <div>
-            <div id="divQuestion"></div>
-            <div id="divAnswer">
-                <input type=radio name="rdAnswer" value="1">Yes</input>
-                <input type=radio name="rdAnswer" value="0">No</input>
-            </div>
-        </div>
-        <div>
-            <input id="btnBack" type="button" value="Back"></input>
-            <input id="btnNext" type="button" value="Next"></input>
-        </div>
-    </body>
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="container">
+		<div class="questionHeadingArea">
+			<h2>Arthritis Test</h2>
+		</div>
+		<div class="activeQuesHint">
+			<ul id="ulActiveQuestionHint">
+			</ul>
+		</div>
+		<div class="questionBox">
+			<span id="spBack" class="moveBack"></span>
+			<span class="question"><h3 id="question"></h3></span>
+			<span id="spNext" class="moveNext"></span>
+		</div>
+		<div id="divButtonArea" class="radioButtonArea">
+			<a href="#" class="button circle" >
+				<span id="spYes" data-ans="1">Yes</span> 
+			</a>
+			<a href="#" class="button circle">
+				<span id="spNo" data-ans="0">No</span>
+			</a>
+		</div>
+	</div>
+	
+	<div id="divWrapWrapper" class="wrapWrapper">
+		<div id="divAnsHint" class="ansHint">
+			<h4>PLEASE CHOOSE THE OPTION</h4>
+			<img src="assets/answer.png" width="200px" class="selectHint" />
+		</div>
+        <div class="radioButtonArea">
+			<a href="#" class="button circle" >
+				<span id="spOK">OK</span> 
+			</a>
+		</div>
+	</div>
+</div>
+</body>
+
 </html>

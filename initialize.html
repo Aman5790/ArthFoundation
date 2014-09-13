@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <title>Intialize</title>
-    <script type="text/javascript" src="js/utilities/jquery.js"></script>
-    <script type="text/javascript" src="js/view/ViewInitialize.js"></script>
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/utilities/jquery.js"></script>
+<script type="text/javascript" src="js/utilities/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/view/ViewInitialize.js"></script>
     
-    <script src="js/Main.js"></script>    
-    <script src="js/view/MainView.js"></script>
-    <script src="js/controller/MainController.js"></script>
-    <script src="js/model/MainModel.js"></script>
-    <script src="js/model/BackendDataContainer.js"></script>
+<script src="js/Main.js"></script>    
+<script src="js/view/MainView.js"></script>
+<script src="js/controller/MainController.js"></script>
+<script src="js/model/MainModel.js"></script>
+<script src="js/model/BackendDataContainer.js"></script>
     
-    <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function(){
+        $("#divLoader").css("display", "block");
+        
         main('INITIALIZE_APP');
         
-        $('#btnArthritisTest').click(function(){
-            window.location= 'ArthritisRiskTest.html';
-        });
+        setTimeout(hideLoader, 6000);
+        
+        function hideLoader(){
+            $('#divLoader').fadeOut('slow', function(){
+                $('#divContainer').show('slow');
+            });
+            
+            $('#spArthritis').click(function(){
+                window.location="ArthritisRiskTest.html";
+            });
+        }
     });
-    </script>
-    
-    <body>
-    <input id="btnArthritisTest" type="button" value="Start Test"></input>
-    </body>
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+	<div id="divLoader" class="preLoader" style="display:none">
+		<img class="logo" src="assets/logo.png" />
+	</div>
+	<div id="divContainer" class="container">
+		<div class="welcomeBox">
+			<div class="headingArea">
+				<h1>Welcome to the First Page</h1>
+			</div>
+			<div class="buttonArea">
+				<a href="#" class="button">
+					<span id="spArthritis">Arthritis</span>
+				</a>
+				<a href="#" class="button">
+					<span id="spOsteoporosis">Osteoporosis</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
 </html>
