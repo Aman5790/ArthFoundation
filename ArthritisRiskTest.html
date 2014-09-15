@@ -6,6 +6,8 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script type="text/javascript" src="js/utilities/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="js/utilities/jquery.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+<script type="text/javascript" src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
     
 <script type="text/javascript" src="js/view/ViewArthritisRiskTest.js"></script>
 
@@ -18,6 +20,29 @@
 <script type="text/javascript">
     $(document).ready(function(){
         main('ARTHRITIS_TEST');
+        
+        $('#divWrapper').live("swiperight", function(){
+            if($('#divButtonArea span').hasClass('pressed')){
+                var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
+				
+            }
+            indexQuestion--;
+            setQuestion(indexQuestion);
+        });
+        
+        $('#divWrapper').live("swipeleft", function(){
+            if($('#divButtonArea span').hasClass('pressed')){
+                var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
+                if(boolIsSaved){
+                    indexQuestion++;
+                    setQuestion(indexQuestion);
+                }
+            }
+            else{
+                $('#divWrapWrapper').show();
+                $('#divAnsHint').addClass('showAnsHint');
+            }
+        });
         
         $('#spYes').click(function(){
             $('#divButtonArea span').removeClass('pressed');
@@ -40,9 +65,7 @@
         });
         
         $('#spBack').click(function(){
-            
-            {
-            if($('#divButtonArea span').hasClass('pressed'))
+            if($('#divButtonArea span').hasClass('pressed')){
                 var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
 				
             }
@@ -76,7 +99,7 @@
 </head>
 
 <body>
-<div class="wrapper">
+<div id="divWrapper" class="wrapper">
 	<div class="container">
 		<div class="questionHeadingArea">
 			<h2>Arthritis Test</h2>
