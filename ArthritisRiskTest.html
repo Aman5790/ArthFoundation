@@ -21,14 +21,22 @@
         
         $('#spYes').click(function(){
             $('#divButtonArea span').removeClass('pressed');
-			//$('#spNext').addClass('moveNextActive');
             $(this).addClass('pressed');
+            var IsLastQuestion= checkLastQuestion();
+            if(IsLastQuestion){
+                var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
+                showTestResult();
+            }
         });
                            
         $('#spNo').click(function(){
             $('#divButtonArea span').removeClass('pressed');
-			//$('#spNext').addClass('moveNextActive');
             $(this).addClass('pressed');
+            var IsLastQuestion= checkLastQuestion();
+            if(IsLastQuestion){
+                var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
+                showTestResult();
+            }
         });
         
         $('#spBack').click(function(){
@@ -40,7 +48,6 @@
             }
             indexQuestion--;
             setQuestion(indexQuestion);
-			//$('#spNext').addClass('moveNextActive');
         });
         
         
@@ -48,16 +55,11 @@
             if($('#divButtonArea span').hasClass('pressed')){
                 var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
                 if(boolIsSaved){
-				//	$('#spNext').addClass('moveNextActive');
                     indexQuestion++;
                     setQuestion(indexQuestion);
                 }
-				else{
-				//	$('#spNext').removeClass('moveNextActive');
-				}
             }
             else{
-			//	$('#spNext').removeClass('moveNextActive');
                 $('#divWrapWrapper').show();
                 $('#divAnsHint').addClass('showAnsHint');
             }

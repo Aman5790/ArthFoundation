@@ -72,14 +72,6 @@ function setQuestion(index){
                 }
             }
             else{
-                var boolIsArthritis= calculateArthritisTestResult();
-                if(boolIsArthritis){
-                    var stageArthritis= calculateArthritisStage();
-                    alert("");
-                }
-                else{
-                    // You are fit !!
-                }
             }
             
         }
@@ -99,6 +91,30 @@ function saveAnswer(index,strAnswer){
     }
 }
 
+function checkLastQuestion(){
+    if(oArthritisQA !=null && oArthritisQA.QA.length>0 ){
+           if(oArthritisQA.QA.length == indexQuestion){
+               return true;
+           }
+    }
+    return false;
+}
+
+
+function showTestResult(){
+    var IsOK= confirm('Sumit answers??');
+    if(IsOK){
+        var boolIsArthritis= calculateArthritisTestResult();
+        if(boolIsArthritis){
+            var stageArthritis= calculateArthritisStage();
+            alert(stageArthritis);
+        }
+        else{
+            alert('You are fit !!');
+        }
+    }
+}
+
 function calculateArthritisTestResult(){
     var arrArthritisQA= oArthritisQA.QA;
     for(var iQuesNo=0; iQuesNo<arrArthritisQA.length; iQuesNo++){
@@ -111,28 +127,28 @@ function calculateArthritisTestResult(){
 
 function calculateArthritisStage(){
     var arrArthritisQA= oArthritisQA.QA;
-    for(var iQuesNo=arrArthritisQA.length -1; iQuesNo>0; iQuesNo--){
+    for(var iQuesNo=arrArthritisQA.length -1; iQuesNo>=0; iQuesNo--){
         switch(iQuesNo){
         
             case 8:
             case 7:
             case 6:
                     if(arrArthritisQA[iQuesNo].A == '1'){
-                        return 1;
+                        return "Severe";
                     }
                     break;
             case 5:
             case 4:
             case 3:
                     if(arrArthritisQA[iQuesNo].A == '1'){
-                        return 2;
+                        return "Moderate";
                     }
                     break;
             case 2:
             case 1:
             case 0:
                     if(arrArthritisQA[iQuesNo].A == '1'){
-                        return 3;
+                        return "Mild";
                     }
                     break;
             default:
