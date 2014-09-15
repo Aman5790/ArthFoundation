@@ -22,6 +22,10 @@ body *{
   user-select: none;
 }
 
+a{
+	text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6{
 	text-align: center;
 }
@@ -186,6 +190,7 @@ background: #8c7f80;
     font-size: 50px;
     color: #fff;
 	margin: 4% 0;
+	-webkit-appearance: none;
 }
 
 .button span {
@@ -210,6 +215,7 @@ background: #8c7f80;
     -moz-transition: background-color .2s ease-in-out, -moz-transform .1s ease-in-out;
     -o-transition: background-color .2s ease-in-out, -o-transform .1s ease-in-out;
     transition: background-color .2s ease-in-out, transform .1s ease-in-out;
+	-webkit-appearance: none;
 }
 
 .button:hover span {
@@ -230,34 +236,43 @@ background: #8c7f80;
     transform: translate(0, 4px);
 }
 
-.circle{
-	-webkit-border-radius: 50px !important;
-	-moz-border-radius: 50px !important;
-	border-radius: 50px !important;
+
+.checkRadio{
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	padding: 20px 15px;
+	background: rgba(0,0,0,.5);
+	font-size: 35px;
+	color: #fff;
+	display: inline-block;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	-webkit-box-shadow: inset -2px 2px 6px #000;
+	  -moz-box-shadow: inset -2px 2px 6px #000;
+	  box-shadow: inset -2px 2px 6px #000;
+	  width: 50px;
+	  -webkit-appearance: none;
 }
 
-.circle span{
-	-webkit-border-radius: 50px !important;
-	-moz-border-radius: 50px !important;
-	border-radius: 50px !important;
-	padding: 24px 0px !important;
+.checkRadio:hover{
+	color: #000 !important;
+	background: #fff;
+	font-weight: bolder;
+	transition: .5s;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
 }
+
 .pressed{
-	background-color: #00ff00 !important;
-    text-shadow: 0 -1px 1px rgba(175, 49, 95, .9), 0 0 5px rgba(255, 255, 255, .8) !important;
-	-webkit-transform: translate(0, 4px);
-    -moz-transform: translate(0, 4px);
-    -o-transform: translate(0, 4px);
-    transform: translate(0, 4px);
-	
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(101, 65%, 23%, 0.8)), to(hsla(84, 100%, 72%, 0.2))) !important;
-    background-image: -webkit-linear-gradient(hsla(101, 65%, 23%, 0.8)), to(hsla(84, 100%, 72%, 0.2))) !important;
-    background-image: -moz-linear-gradient(hsla(101, 65%, 23%, 0.8)), to(hsla(84, 100%, 72%, 0.2))) !important;
-    background-image: -o-linear-gradient(hsla(101, 65%, 23%, 0.8)), to(hsla(84, 100%, 72%, 0.2))) !important;
-	
-	-webkit-box-shadow:    0 8px 0 #7F0003, 0 12px 10px rgba(0, 0, 0, .3);
-    -moz-box-shadow: 0 8px 0 #7F0003, 0 12px 10px rgba(0, 0, 0, .3);
-    box-shadow:    0 8px 0 #7F0003, 0 12px 10px rgba(0, 0, 0, .3);
+	color: #000 !important;
+	background: #fff;	
+	font-weight: bolder;
+	transition: .5s;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-webkit-appearance: none;
 }
 
 .questionBox{
@@ -276,25 +291,37 @@ background: #8c7f80;
 .moveNext, .moveBack{
 	float: left;
 	width: 120px;
-	height: 80px;
-	background: rgba(0,0,0,0.4);
+	height: 52px;
+	background: rgba(0,0,0,0.8);
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	margin: auto 0;
 	cursor: pointer;
+	overflow: hidden;
 }
 
 .moveBack{
 	left: 0; 
-	background: url(../assets/back.png) no-repeat center center transparent;
-	background-size: 70% 100%;
+	background: url(../assets/back_inactive.png) no-repeat center center transparent;
+	background-size: 50% 100%;
+	-webkit-background-size: 50% 100%;
+	-moz-background-size: 50% 100%;
 }
 
 .moveNext{
 	right: 0; 
-	background: url(../assets/next.png) no-repeat center center transparent;
-	background-size: 70% 100%;
+	background: url(../assets/next_inactive.png) no-repeat center center transparent;
+	background-size: 50% 100%;
+	-webkit-background-size: 50% 100%;
+	-moz-background-size: 50% 100%;
+}
+
+.moveNextActive{
+	background: url(../assets/next.png) no-repeat center center transparent !important;
+	background-size: 50% 100% !important;
+	-webkit-background-size: 50% 100% !important;
+	-moz-background-size: 50% 100% !important;
 }
 
 .question{
@@ -334,10 +361,10 @@ background: #8c7f80;
 
 .ansHint{
 	width: 500px;
-	height: 500px;
+	height: 450px;
 	left: 50%;
 	top: -50%;
-	margin-top: -250px;
+	margin-top: -225px;
 	margin-left: -250px;
 	position: absolute;
 	color: #fff;
@@ -356,15 +383,16 @@ background: #8c7f80;
 .selectHint{
 		margin-left: 135px;
 		animation: moveCartoon 2s;
-		animation-delay:3s;
+		animation-delay:1s;
 		
 		-moz-animation: moveCartoon 4s; 
-		-moz-animation-delay:3s;
+		-moz-animation-delay:1s;
 		-webkit-animation: moveCartoon 4s;
-		-webkit-animation-delay:3s;
+		-webkit-animation-delay:1s;
 		-webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
     animation-fill-mode: forwards;
-	}
+}
+	
 	
      @-moz-keyframes moveCartoon
     {
@@ -377,6 +405,13 @@ background: #8c7f80;
 		0%   {margin-left:135px;}
 		100%   {margin-left:70%;}
     }
+
+.flt_cntr{
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+
 
 @media only screen
 and (max-width : 767px) {
@@ -429,6 +464,8 @@ and (min-width : 768px)
 and (max-width : 1023px) {
 
 }
+ 
+ 
  
 
  
