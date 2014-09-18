@@ -102,12 +102,16 @@ function checkLastQuestion(){
 
 
 function showTestResult(){
-    var IsOK= confirm('Sumit answers??');
+    debugger;
+    var IsOK= confirm('Submit answers??');
     if(IsOK){
         var boolIsArthritis= calculateArthritisTestResult();
         if(boolIsArthritis){
             var stageArthritis= calculateArthritisStage();
-            alert(stageArthritis);
+            if(stageArthritis!=null){
+                var url = "ArthritisRiskTestResult.html?stage=" + encodeURIComponent(stageArthritis);
+                window.location.href = url;
+            }
         }
         else{
             alert('You are fit !!');
@@ -152,6 +156,7 @@ function calculateArthritisStage(){
                     }
                     break;
             default:
+                return null;
                     break;
         }
     }
