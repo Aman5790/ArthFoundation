@@ -114,7 +114,8 @@ function showTestResult(){
             }
         }
         else{
-            alert('You are fit !!');
+            var url = "ArthritisRiskTestResult.html?stage=" + encodeURIComponent('fit');
+            window.location.href = url;
         }
     }
 }

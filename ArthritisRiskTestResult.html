@@ -15,17 +15,21 @@
             $('#divStage span').removeClass('opaque');
             $('#divImage span').removeClass('hide');
             switch(value.toUpperCase()){
+                case 'FIT':
+                    $('#spMild,#spModerate,#spSevere').addClass('opaque');
+                    $('#imgMild,#imgModerate,#imgSevere').addClass('hide');
+                    break;
                 case 'MILD':
-                    $('#spModerate,#spSevere').addClass('opaque');
-                    $('#imgModerate,#imgSevere').addClass('hide');
+                    $('#spFit,#spModerate,#spSevere').addClass('opaque');
+                    $('#imgFit,#imgModerate,#imgSevere').addClass('hide');
                     break;
                 case 'MODERATE':
-                    $('#spMild,#spSevere').addClass('opaque');
-                    $('#imgMild,#imgSevere').addClass('hide');
+                    $('#spFit,#spMild,#spSevere').addClass('opaque');
+                    $('#imgFit,#imgMild,#imgSevere').addClass('hide');
                     break;
                 case 'SEVERE':
-                    $('#spModerate,#spMild').addClass('opaque');
-                    $('#imgModerate,#imgMild').addClass('hide');
+                    $('#spFit,#spModerate,#spMild').addClass('opaque');
+                    $('#imgFit,#imgModerate,#imgMild').addClass('hide');
                     break;
                 default:
                     break;
@@ -44,11 +48,13 @@
 		<div id="" class="ansHint showAnsHint">
 			<h3>This is your result</h3>
 			<div id="divStage" class="stage">
-				<span id="spMild" class="green"><h4>Mild</h4></span>
+                <span id="spFit" class="green"><h4>Fit</h4></span>
+				<span id="spMild" class="yellow"><h4>Mild</h4></span>
 				<span id="spModerate" class="orange"><h4>Moderate</h4></span>
 				<span id="spSevere" class="red"><h4>Severe</h4></span>
 			</div>
 			<div id="divImage" class="bind100 center">
+                <img id="imgFit" src="assets/ImageFit.gif" width="200px" class="" />
 				<img id="imgMild" src="assets/answer.png" width="200px" class="" />
 				<img id="imgModerate" src="assets/Mickey_Mouse_4.png" width="200px" class="" />
 				<img id="imgSevere" src="assets/Mickey_Mouse_12.png" width="200px" class="" />
