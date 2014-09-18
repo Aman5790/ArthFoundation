@@ -167,6 +167,7 @@ background: #8c7f80;
 .buttonArea{
 	text-align: center;
 	position: relative;
+	height: 60%;
 	float: left;
 	width: 100%;
 	padding-top: 5%;
@@ -372,6 +373,8 @@ background: #8c7f80;
     transition: .5s;
 }
 
+ 
+
 .showAnsHint{
 	top: 50%;
 	display: block;
@@ -388,52 +391,6 @@ background: #8c7f80;
 		-webkit-animation-delay:1s;
 		-webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
     animation-fill-mode: forwards;
-}
-
-.stage{
-	width: 100%;
-	float: left;
-	margin: 20px 0;
-}
-
-.stage span{
-	width: 33.33%;
-	display: inline-block;
-	margin: 0;
-	padding: 15px 0;
-	float: left;
-	vertical-align: middle;
-	position: relative;
-	word-break: break-all;
-	-webkit-box-shadow: inset -2px 2px 4px #000;
-	  -moz-box-shadow: inset -2px 2px 4px #000;
-	  box-shadow: inset -2px 2px 4px #000;
-	  -webkit-transform: scale(1.25);
-	-ms-transform: scale(1.25);
-	transform: scale(1.25);
-}
-
-.green{
-	background: green;
-	z-index: 2;
-}
-
-.orange{
-	background: orange;
-	z-index: 2;
-}
-
-.red{
-	background: red;
-	z-index: 2;
-}
-
-.opaque{
-	background: rgba(0,0,0,.5) !important;
-	z-index:1 !important;
-	  -webkit-transform: scale(1) !important;
-	-ms-transform: scale(1) !important;
-	transform: scale(1) !important;
 }
 	
 	
@@ -455,31 +412,6 @@ background: #8c7f80;
 	text-align: center;
 }
 
-.hide{
-	display: none;
-}
-
-.show{
-	display: block;
-}
-
-.bind100{
-	float: left;
-	width: 100%;
-}
-
-.center{
-	text-align: center;
-	margin: auto;
-}
-
-.fnt25{
-	font-size: 25px;
-}
-
-.min125{
-	min-width: 125px !important;
-}
 
 @media only screen
 and (max-width : 767px) {
