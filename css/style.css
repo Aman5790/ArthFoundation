@@ -12,6 +12,7 @@ html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre
 body{
 	font-family: 'Poiret-One', Fallback, sans-serif;
 	color: #fff;
+	overflow: hidden;
 }
 
 body *{
@@ -28,6 +29,7 @@ a{
 
 h1, h2, h3, h4, h5, h6{
 	text-align: center;
+	color: #fff;
 }
 
 h1{
@@ -46,6 +48,28 @@ h4{
 font-size: 1.5em;
 }
 
+.logoTop{
+	width: 150px;
+	height: 150px;
+	background: url('../assets/logo.png') no-repeat center center transparent;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	animation: rotating 3s linear infinite;
+	-webkit-animation: rotating 3s linear infinite;
+	-moz-animation: rotating 3s linear infinite;
+}
+
+@-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
 .wrapper{
 	width: 1024px;
 	height: 100%;
@@ -62,6 +86,11 @@ font-size: 1.5em;
 	height: 100%;
 	position: relative;
 }
+
+#divContainer{
+	display: none;
+}
+
 .container, .welcomeBox{
 	width: 100%;
 	float: left;
@@ -347,6 +376,7 @@ background: #8c7f80;
 .radioButtonArea .button span{
 	min-width: 100px;
 	padding: 15px 22px;
+	color: #fff;
 }
 
 .wrapWrapper{
@@ -379,6 +409,7 @@ background: #8c7f80;
 
 .selectHint{
 		margin-left: 135px;
+		width: 200px;
 		animation: moveCartoon 2s;
 		animation-delay:1s;
 		
@@ -397,7 +428,7 @@ background: #8c7f80;
 }
 
 .stage span{
-	width: 33.33%;
+	width: 25%;
 	display: inline-block;
 	margin: 0;
 	padding: 15px 0;
@@ -473,6 +504,9 @@ background: #8c7f80;
 	width: 100%;
 }
 
+.bind100 img{
+		width: 200px;
+	}
 .center{
 	text-align: center;
 	margin: auto;
@@ -491,6 +525,21 @@ and (max-width : 767px) {
 	.wrapper{
 		width: 100%;
 	}
+	
+	h1 {
+		font-size: 2.6em;
+	}
+	
+	.logoTop {
+		width: 100px;
+		height: 100px;
+	}
+	.buttonArea {
+		padding-top: 2%;
+	}
+	.headingArea {
+		height: 35%;
+	}
 }
 
 
@@ -499,11 +548,19 @@ and (min-width : 320px)
 and (max-width : 480px) {
 
 	h1 {
-		font-size: 3em;
+		font-size: 1.7em;
 	}
 	
 	h2{
-		font-size: 2.5em;
+		font-size: 1.7em;
+	}
+	
+	h3 {
+		font-size: 1.5em;
+	}
+	
+	h4 {
+		font-size: 1.2em;
 	}
 	.button {
 		font-size: 40px;
@@ -525,8 +582,35 @@ and (max-width : 480px) {
 		animation: none;
 		-moz-animation: none; 
 		-webkit-animation: none;
+		width: 150px;
+	}
+	
+	.logoTop{
+		width: 40px;
+		height: 40px;
+	}
+	
+	.headingArea {
+		height: 30%;
+}
+
+	.moveNext, .moveBack {
+		width: 50px;
+		background-size: 50% 100%;
+		-webkit-background-size: 50% 70%;
+	}
+	
+	.question {
+		padding: 1% 50px;
+	}
+	
+	.stage h4{
+		font-size: 1em;
 	}
 
+	.bind100 img{
+		width: 150px;
+	}
 }
 
  
@@ -535,7 +619,13 @@ and (max-width : 480px) {
 @media only screen
 and (min-width : 768px)
 and (max-width : 1023px) {
-
+	.wrapper{
+			width: 100%;
+	}
+	
+	h1{
+		font-size: 3em;
+	}
 }
  
  

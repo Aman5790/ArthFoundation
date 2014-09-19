@@ -24,7 +24,7 @@
         
         function hideLoader(){
             $('#divLoader').fadeOut('slow', function(){
-                $('#divContainer').show('slow');
+                $('#divContainer').show();
             });
             
             $('#spArthritis').click(function(){
@@ -37,6 +37,7 @@
 
 <body>
 <div class="wrapper">
+<div class="logoTop" id="logoTop"></div>
 	<div id="divLoader" class="preLoader" style="display:none">
 		<img class="logo" src="assets/logo.png" />
 	</div>

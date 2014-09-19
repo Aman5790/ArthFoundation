@@ -2,7 +2,6 @@ var oArthritisQA=null;
 var indexQuestion=1;
 
 function ViewArthritisRiskTest(_Model, _Controller){
-    debugger;
     this.modelRef = _Model;
     this.controllerRef = _Controller;
     try{
