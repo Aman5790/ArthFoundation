@@ -16,6 +16,7 @@
     
 <script type="text/javascript">
     $(document).ready(function(){
+		$('#logoTop').hide();
         $("#divLoader").css("display", "block");
         
         main('INITIALIZE_APP');
@@ -25,10 +26,11 @@
         function hideLoader(){
             $('#divLoader').fadeOut('slow', function(){
                 $('#divContainer').show();
+				$('#logoTop').show();
             });
             
             $('#spArthritis').click(function(){
-                window.location="ArthritisRiskTest.html";
+                window.location="Arthritis.html";
             });
         }
     });
@@ -44,7 +46,12 @@
 	<div id="divContainer" class="container">
 		<div class="welcomeBox">
 			<div class="headingArea">
-				<h1>Welcome to the First Page</h1>
+				<h1 class="grey">Welcome<br><span class="cap headText">Arthritis Foundation of India Trust</span></h1>
+				<blockquote>Dedicated to strong bones</blockquote>
+			</div>
+			<div class="about">
+			<h4>AFI in its endeavour to take osteoporosis and Bone Health to common people and ultimately attain our goal of total Bone Health. 
+			Our slogan is<b> Bone Health – a Right, Realize it<b></h4>
 			</div>
 			<div class="buttonArea">
 				<a href="#" class="button">

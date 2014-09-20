@@ -20,7 +20,6 @@
 <script type="text/javascript">
     $(document).ready(function(){
         main('ARTHRITIS_TEST');
-        
         $('#divWrapper').live("swiperight", function(){
             if($('#divButtonArea span').hasClass('pressed')){
                 var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
@@ -93,7 +92,25 @@
                 $('#divWrapWrapper').hide();
         });
         
+        $('#spSubmit').click(function(){
+            var boolIsArthritis= calculateArthritisTestResult();
+            if(boolIsArthritis){
+                var stageArthritis= calculateArthritisStage();
+                if(stageArthritis!=null){
+                    var url = "ArthritisRiskTestResult.html?stage=" + encodeURIComponent(stageArthritis);
+                    window.location.href = url;
+                }
+            }
+            else{
+                var url = "ArthritisRiskTestResult.html?stage=" + encodeURIComponent('fit');
+                window.location.href = url;
+            }
+        });
         
+        $('#spCancel').click(function(){
+            $('#divSubmit').removeClass('showAnsHint');
+            $('#divWrapWrapper').hide();
+        });
     });
 </script>
 </head>
@@ -104,7 +121,7 @@
 <div class="logoTop" id="logoTop"></div>
 	<div class="container">
 		<div class="questionHeadingArea">
-			<h2>Arthritis Test</h2>
+			<h2 class="grey">Arthritis Test</h2>
 		</div>
 		<div class="activeQuesHint">
 			<ul id="ulActiveQuestionHint">
@@ -132,6 +149,20 @@
 			<div class="radioButtonArea flt_cntr">
 				<a href="#" class="button" >
 					<span id="spOK">OK</span> 
+				</a>
+			</div>
+		</div>
+		
+		<div id="divSubmit" class="ansHint">
+			<h4>SUBMIT ANSWERS ?</h4>
+			<img src="assets/Mickey_Mouse_13.png"  class="selectHint" />
+			<div class="radioButtonArea flt_cntr">
+				<a href="#" class="button" >
+					<span id="spSubmit">OK</span> 
+				</a>
+				
+				<a href="#" class="button" >
+					<span id="spCancel">Cancel</span> 
 				</a>
 			</div>
 		</div>

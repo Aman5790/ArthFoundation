@@ -102,21 +102,8 @@ function checkLastQuestion(){
 
 function showTestResult(){
     debugger;
-    var IsOK= confirm('Submit answers??');
-    if(IsOK){
-        var boolIsArthritis= calculateArthritisTestResult();
-        if(boolIsArthritis){
-            var stageArthritis= calculateArthritisStage();
-            if(stageArthritis!=null){
-                var url = "ArthritisRiskTestResult.html?stage=" + encodeURIComponent(stageArthritis);
-                window.location.href = url;
-            }
-        }
-        else{
-            var url = "ArthritisRiskTestResult.html?stage=" + encodeURIComponent('fit');
-            window.location.href = url;
-        }
-    }
+	$('#divSubmit').addClass('showAnsHint');   
+	$('#divWrapWrapper').show();
 }
 
 function calculateArthritisTestResult(){

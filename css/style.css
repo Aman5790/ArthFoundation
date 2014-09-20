@@ -98,13 +98,40 @@ font-size: 1.5em;
 	height: 100%;
 }
 
+.cap{
+	text-transform: uppercase !important;
+}
+
 .headingArea{
 	float: left;
 	width: 100%;
-	height: 40%;
+	height: 50%;
 	position: relative;
 }
 
+.pageHead{
+	float: left;
+	width: 100%;
+}
+
+p{
+	font-size: 1.8em;
+	line-height: 1.3em;
+	text-align: justify;
+}
+
+.ques{
+	float: left;
+	width: 100%;
+	padding: 0 20px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.ques h3{
+	text-align: left;
+	line-height: 2em;
+}
 .questionHeadingArea{
 	float: left;
 	width: 100%;
@@ -115,8 +142,42 @@ font-size: 1.5em;
 
 .headingArea h1{
 	position: absolute;
-	bottom: 5%;
+	top: 10%;
 	width: 100%;
+	line-height: 1.2em;
+	text-transform: capitalize;
+	padding: 0 20px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.pageHead h1{
+	line-height: 2.8em;
+}
+
+.headingArea blockquote{
+	position: absolute;
+	bottom: 9%;
+	width: 100%;
+	line-height: 1.3em;
+	font-size: 2.4em;
+	text-transform: capitalize;
+	font-style: italic;
+	text-align: center;
+	font-weight: bold;
+	
+}
+
+blockquote:before, blockquote:after{
+	height: 0;
+	content: "\201C";
+	font: italic 150%/1 Cochin,Georgia,"Times New Roman", serif;
+	color: #999;
+}
+
+blockquote:after{
+	content : "\201D"
 }
 
 .questionHeadingArea h2{
@@ -269,7 +330,7 @@ background: #8c7f80;
 	-webkit-border-radius: 50px;
 	-moz-border-radius: 50px;
 	border-radius: 50px;
-	padding: 20px 15px;
+	padding: 18px 10px;
 	background: rgba(0,0,0,.5);
 	font-size: 35px;
 	color: #fff;
@@ -398,8 +459,6 @@ background: #8c7f80;
 	position: absolute;
 	color: #fff;
 	display: none;
-	-webkit-transition: .5s; 
-    transition: .5s;
 }
 
 .showAnsHint{
@@ -411,12 +470,9 @@ background: #8c7f80;
 		margin-left: 135px;
 		width: 200px;
 		animation: moveCartoon 2s;
-		animation-delay:1s;
 		
 		-moz-animation: moveCartoon 4s; 
-		-moz-animation-delay:1s;
 		-webkit-animation: moveCartoon 4s;
-		-webkit-animation-delay:1s;
 		-webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
     animation-fill-mode: forwards;
 }
@@ -520,6 +576,35 @@ background: #8c7f80;
 	min-width: 125px !important;
 }
 
+.about{
+float: left;
+width: 100%;
+padding: 22px 20px 10px 20px;
+box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+}
+
+.about h4{
+	line-height: 1.3em;
+}
+
+.grey{
+	color: #ccc;
+}
+
+.orng{
+	color: #E77817;
+}
+
+.headText{
+		color: #E77817;
+		font-size: .6em;
+	}
+.mrgn5{
+	margin: 5px 0;
+}
+
 @media only screen
 and (max-width : 767px) {
 	.wrapper{
@@ -530,6 +615,10 @@ and (max-width : 767px) {
 		font-size: 2.6em;
 	}
 	
+	.headingArea h1{
+		top: 11%;
+	}
+	
 	.logoTop {
 		width: 100px;
 		height: 100px;
@@ -538,7 +627,21 @@ and (max-width : 767px) {
 		padding-top: 2%;
 	}
 	.headingArea {
-		height: 35%;
+		height: 40%;
+	}
+	
+	.headingArea blockquote{
+		bottom: 0;
+		font-size: 1.8em;
+	}
+	
+	.headText {
+		font-size: 0.5em;
+	}
+	
+	.button span {
+		min-width: 150px;
+		padding: 13px 30px;
 	}
 }
 
@@ -562,13 +665,60 @@ and (max-width : 480px) {
 	h4 {
 		font-size: 1.2em;
 	}
+	
+	.logo{
+		width:200px;
+		height: 200px;
+		margin-top: -100px;
+		margin-left: -100px;
+	}
+	
+	p {
+		font-size: 1.3em;
+		line-height: 1.15em;
+	}
+	
+	.questionHeadingArea h2{
+		top: 26%;
+	}
+	
+	.question h3{
+		font-size: 1.3em;
+		line-height: 1.5em;
+		font-weight: normal;
+	}
+	
+	.headingArea blockquote{
+		font-size: 1.4em;
+	}
+	
+	.pageHead h1{
+		line-height: 2.4em;
+	}
+	
+	/* Chrome, Safari, Opera */ 
+@-webkit-keyframes movelogo {
+    0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
+    25%  {width:200px; height:200px;margin-top:-100px;margin-left:-100px}
+    75%  {width:200px; height:200px;-webkit-transform: rotate(0deg);}
+    100% {width:200px; height:200px;-webkit-transform: rotate(360deg);opacity:1;}
+}
+
+/* Standard syntax */
+@keyframes movelogo {
+     0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
+    25%  {width:200px; height:200px;margin-top:-100px;margin-left:-100px}
+    75%  {width:200px; height:200px;transform: rotate(0deg);}
+    100% {width:200px; height:200px;transform: rotate(360deg);opacity:1;}
+}
 	.button {
-		font-size: 40px;
+		font-size: 30px;
+		margin: 2% 0;
 	}
 	.button span {
-		min-width: 250px;
+		min-width: 185px;
 		display: inline-block;
-		padding: 15px 20px;
+		padding: 12px 15px;
 	}
 	
 	.ansHint{
@@ -610,6 +760,11 @@ and (max-width : 480px) {
 
 	.bind100 img{
 		width: 150px;
+	}
+	
+	.headText{
+		color: #E77817;
+		font-size: .7em;
 	}
 }
 
