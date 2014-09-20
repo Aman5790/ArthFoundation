@@ -53,6 +53,7 @@ font-size: 1.5em;
 	height: 150px;
 	background: url('../assets/logo.png') no-repeat center center transparent;
 	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
 	position: absolute;
 	top: 10px;
 	left: 10px;
@@ -79,6 +80,7 @@ font-size: 1.5em;
 	right: 0;
 	background: url('../assets/bg.png') no-repeat center center transparent;
 	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
 }
 
 .preLoader{
@@ -232,6 +234,7 @@ background: #8c7f80;
 	height: 300px;
     position: absolute;
     -webkit-animation: movelogo 5s 1; /* Chrome, Safari, Opera */ 
+    -moz-animation: movelogo 5s 1; /* Chrome, Safari, Opera */ 
     animation: movelogo 5s 1;
 	top: 50%;
 	left: 50%;
@@ -245,6 +248,13 @@ background: #8c7f80;
     25%  {width:300px; height:300px;margin-top:-150px;margin-left:-150px}
     75%  {width:300px; height:300px;-webkit-transform: rotate(0deg);}
     100% {width:300px; height:300px;-webkit-transform: rotate(360deg);opacity:1;}
+}
+
+@-moz-keyframes movelogo {
+    0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
+    25%  {width:300px; height:300px;margin-top:-150px;margin-left:-150px}
+    75%  {width:300px; height:300px;-moz-transform: rotate(0deg);}
+    100% {width:300px; height:300px;-moz-transform: rotate(360deg);opacity:1;}
 }
 
 /* Standard syntax */
@@ -286,6 +296,7 @@ background: #8c7f80;
 	min-width: 250px;
     display: inline-block;
     padding: 20px 30px;
+	color: #fff;
     background-color: #FF4C4C;
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(0, 100%, 65%, 0.8)), to(hsla(338, 90%, 70%, .2)));
     background-image: -webkit-linear-gradient(hsla(0, 100%, 65%, 0.8), hsla(338, 90%, 70%, .2));
@@ -427,7 +438,7 @@ background: #8c7f80;
 	text-align: center;
 	float: left;
 	max-height: 14%;
-	padding: 1.5% 0;
+	padding: 2.5% 0;
 }
 
 .radioButtonArea .button{
@@ -435,7 +446,7 @@ background: #8c7f80;
 }
 
 .radioButtonArea .button span{
-	min-width: 100px;
+	min-width: 150px;
 	padding: 15px 22px;
 	color: #fff;
 }
@@ -477,6 +488,13 @@ background: #8c7f80;
     animation-fill-mode: forwards;
 }
 
+.submitHint{
+	margin-left: 0;
+	width: 200px;
+	/* left: 0; */
+	float: left;
+}
+
 .stage{
 	width: 100%;
 	float: left;
@@ -506,22 +524,22 @@ background: #8c7f80;
 }
 
 .green{
-	background: green;
+	background: #008000;
 	z-index: 2;
 }
 
-.yellow{
-	background: yellow;
+.sky{
+	background: #21AAD8;
 	z-index: 2;
 }
 
 .orange{
-	background: orange;
+	background: #E77817;
 	z-index: 2;
 }
 
 .red{
-	background: red;
+	background: #ff0000;
 	z-index: 2;
 }
 
@@ -552,6 +570,13 @@ background: #8c7f80;
 	text-align: center;
 }
 
+.flt_cntr_wdth{
+	width: 255px;
+	float: left;
+	text-align: center;
+	margin-top: 25px;
+}
+
 .hide{
 	display: none;
 }
@@ -566,7 +591,7 @@ background: #8c7f80;
 }
 
 .bind100 img{
-		width: 200px;
+		width: 180px;
 	}
 .center{
 	text-align: center;
@@ -606,8 +631,13 @@ box-sizing: border-box;
 		color: #E77817;
 		font-size: .6em;
 	}
+	
 .mrgn5{
 	margin: 5px 0;
+}
+
+.mrgn20{
+	margin: 20px 0 !important; 
 }
 
 .resultArea h3{
@@ -623,6 +653,14 @@ box-sizing: border-box;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
+
+.mrgn_rght20{
+	margin-right: 20px;
+}
+
+#imgModerate{
+		width: 300px;
+	}
 
 @media only screen
 and (max-width : 767px) {
@@ -736,6 +774,13 @@ and (max-width : 480px) {
     100% {width:200px; height:200px;-webkit-transform: rotate(360deg);opacity:1;}
 }
 
+@-moz-keyframes movelogo {
+    0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
+    25%  {width:200px; height:200px;margin-top:-100px;margin-left:-100px}
+    75%  {width:200px; height:200px;-moz-transform: rotate(0deg);}
+    100% {width:200px; height:200px;-moz-transform: rotate(360deg);opacity:1;}
+}
+
 /* Standard syntax */
 @keyframes movelogo {
      0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
@@ -764,6 +809,10 @@ and (max-width : 480px) {
 		animation: none;
 		-moz-animation: none; 
 		-webkit-animation: none;
+		width: 150px;
+	}
+	
+	.submitHint{
 		width: 150px;
 	}
 	
@@ -809,6 +858,17 @@ and (max-width : 480px) {
 		transform: scale(1.1);
 		-webkit-box-shadow: inset 0px 0px 1px #000;
 		box-shadow: inset 0px 0px 1px #000;
+	}
+	.flt_cntr_wdth {
+		width: 165px;
+	}
+	
+	.radioButtonArea .button span{
+		min-width: 100px;
+	}
+	
+	#imgModerate{
+		width: 250px;
 	}
 }
 

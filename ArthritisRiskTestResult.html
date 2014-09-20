@@ -7,29 +7,34 @@
     <script type="text/javascript" src="js/utilities/jquery.js"></script>
     <script>
     $(document).ready(function(){
-        debugger;
         if (window.location.search.split('?').length > 1) {
             var param = window.location.search.split('?')[1];
             var key = param.split('=')[0];
             var value = decodeURIComponent(param.split('=')[1]);
+            $('#hdnStage').val(value.toUpperCase());
             $('#divStage span').removeClass('opaque');
             $('#divImage span').removeClass('hide');
+            $('#divButtonArea a').removeClass('hide');
             switch(value.toUpperCase()){
                 case 'FIT':
                     $('#spMild,#spModerate,#spSevere').addClass('opaque');
                     $('#imgMild,#imgModerate,#imgSevere').addClass('hide');
+                    $('#lnkTreatment').addClass('hide');
                     break;
                 case 'MILD':
                     $('#spFit,#spModerate,#spSevere').addClass('opaque');
                     $('#imgFit,#imgModerate,#imgSevere').addClass('hide');
+                    $('#lnkPrevention').addClass('hide');
                     break;
                 case 'MODERATE':
                     $('#spFit,#spMild,#spSevere').addClass('opaque');
                     $('#imgFit,#imgMild,#imgSevere').addClass('hide');
+                    $('#lnkPrevention').addClass('hide');
                     break;
                 case 'SEVERE':
                     $('#spFit,#spModerate,#spMild').addClass('opaque');
                     $('#imgFit,#imgModerate,#imgMild').addClass('hide');
+                    $('#lnkPrevention').addClass('hide');
                     break;
                 default:
                     break;
@@ -38,6 +43,19 @@
         else{
             window.location="error.html";
         }
+        
+        $('#lnkPrevention').click(function(){
+            var url = "ArthritisPrevention.html";
+            window.location.href = url;
+        });
+        
+        $('#lnkTreatment').click(function(){
+            if($('#hdnStage').val() !=""){
+                var url = "ArthritisTreatment.html?stage=" + encodeURIComponent($('#hdnStage').val());
+                window.location.href = url;
+            }
+        });
+        
     });
     </script>
 </head>
@@ -51,27 +69,28 @@
 			</div>
 			<div id="divStage" class="stage">
                 <span id="spFit" class="green"><h4>Fit</h4></span>
-				<span id="spMild" class="yellow"><h4>Mild</h4></span>
+				<span id="spMild" class="sky"><h4>Mild</h4></span>
 				<span id="spModerate" class="orange"><h4>Moderate</h4></span>
 				<span id="spSevere" class="red"><h4>Severe</h4></span>
 			</div>
 			<div id="divImage" class="bind100 center">
-                <img id="imgFit" src="assets/ImageFit.gif" class="" />
-				<img id="imgMild" src="assets/answer.png"  class="" />
-				<img id="imgModerate" src="assets/Mickey_Mouse_4.png" class="" />
-				<img id="imgSevere" src="assets/Mickey_Mouse_12.png" class="" />
+                <img id="imgFit" src="assets/fit.png" class="" />
+				<img id="imgMild" src="assets/mild.png"  class="" />
+				<img id="imgModerate" src="assets/moderate.png" class="" />
+				<img id="imgSevere" src="assets/severe.png" class="" />
 			</div>
-			<div class="buttonArea">
-				<a href="#" class="button fnt25 mrgBtm10">
-					<span id="spArthritis" class="min125">Prevention</span>
+			<div id="divButtonArea" class="buttonArea">
+				<a id="lnkPrevention" href="#" class="button fnt25 mrgBtm10">
+					<span class="min125">Prevention</span>
 				</a>
-				<a href="#" class="button fnt25 hide mrgBtm10">
-					<span id="spOsteoporosis" class="min125">Treatment</span>
+				<a id="lnkTreatment" href="#" class="button fnt25 mrgBtm10">
+					<span class="min125">Treatment</span>
 				</a>
 			</div>
 	</div>
 
 </div>
+    <input type="hidden" id="hdnStage" value=""></input>
 </body>
 
 </html>

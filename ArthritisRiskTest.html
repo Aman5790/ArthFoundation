@@ -20,6 +20,9 @@
 <script type="text/javascript">
     $(document).ready(function(){
         main('ARTHRITIS_TEST');
+        
+        $('#lastQuesSubmit').hide();
+        
         $('#divWrapper').live("swiperight", function(){
             if($('#divButtonArea span').hasClass('pressed')){
                 var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
@@ -46,28 +49,18 @@
         $('#spYes').click(function(){
             $('#divButtonArea span').removeClass('pressed');
             $(this).addClass('pressed');
-            var IsLastQuestion= checkLastQuestion();
-            if(IsLastQuestion){
-                var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
-                showTestResult();
-            }
         });
                            
         $('#spNo').click(function(){
             $('#divButtonArea span').removeClass('pressed');
             $(this).addClass('pressed');
-            var IsLastQuestion= checkLastQuestion();
-            if(IsLastQuestion){
-                var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
-                showTestResult();
-            }
         });
         
         $('#spBack').click(function(){
+            $('#lastQuesSubmit').hide();
             if($('#divButtonArea span').hasClass('pressed')){
                 var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
-				
-            }
+			}
             indexQuestion--;
             setQuestion(indexQuestion);
         });
@@ -111,6 +104,21 @@
             $('#divSubmit').removeClass('showAnsHint');
             $('#divWrapWrapper').hide();
         });
+        
+        $('#spConfirm').click(function(){
+            if($('#divButtonArea span').hasClass('pressed')){
+                var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
+                if(boolIsSaved){
+                    showTestResult();
+                }
+            }
+            else{
+                $('#divWrapWrapper').show();
+                $('#divAnsHint').addClass('showAnsHint');
+            }
+        });
+        
+        
     });
 </script>
 </head>
@@ -133,19 +141,24 @@
 			<span id="spNext" class="moveNext"></span>
 		</div>
 		<div id="divButtonArea" class="radioButtonArea">
-			<a href="#">
+			<a href="#" class="mrgn_rght20">
 				<span id="spYes" data-ans="1" class="checkRadio">Yes</span> 
 			</a>
 			<a href="#">
 				<span id="spNo" data-ans="0" class="checkRadio">No</span>
 			</a>
 		</div>
+		<div id="lastQuesSubmit" class="buttonArea">
+            <a href="#" class="button mrgBtm10">
+                <span id="spConfirm">Submit</span>
+            </a>
+		</div>
 	</div>
 	
 	<div id="divWrapWrapper" class="wrapWrapper">
 		<div id="divAnsHint" class="ansHint">
-			<h4>PLEASE CHOOSE THE OPTION</h4>
-			<img src="assets/answer.png"  class="selectHint" />
+			<h4>PLEASE ANSWER THE QUESTION</h4>
+			<img src="assets/choose.png"  class="selectHint mrgn5" />
 			<div class="radioButtonArea flt_cntr">
 				<a href="#" class="button" >
 					<span id="spOK">OK</span> 
@@ -154,15 +167,15 @@
 		</div>
 		
 		<div id="divSubmit" class="ansHint">
-			<h4>SUBMIT ANSWERS ?</h4>
-			<img src="assets/Mickey_Mouse_13.png"  class="selectHint" />
-			<div class="radioButtonArea flt_cntr">
-				<a href="#" class="button" >
-					<span id="spSubmit">OK</span> 
+			<h4 class="mrgn5">READY FOR RESULTS ??</h4>
+			<img src="assets/submit.png"  class="submitHint" />
+			<div class="radioButtonArea flt_cntr_wdth">
+				<a href="#" class="button mrgn20" >
+					<span id="spSubmit">Yes</span> 
 				</a>
 				
-				<a href="#" class="button" >
-					<span id="spCancel">Cancel</span> 
+				<a href="#" class="button mrgn20" >
+					<span id="spCancel">No</span> 
 				</a>
 			</div>
 		</div>

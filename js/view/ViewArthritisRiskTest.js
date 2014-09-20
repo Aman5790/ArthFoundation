@@ -68,6 +68,7 @@ function setQuestion(index){
                 if(index == oArthritisQA.QA.length){
                     $('#spBack').show();
                     $('#spNext').hide();        // As no more question left.
+                    $('#lastQuesSubmit').show();
                 }
             }
             else{
@@ -101,7 +102,6 @@ function checkLastQuestion(){
 
 
 function showTestResult(){
-    debugger;
 	$('#divSubmit').addClass('showAnsHint');   
 	$('#divWrapWrapper').show();
 }
