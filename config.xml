@@ -35,7 +35,7 @@
   <!--<preference name="phonegap-version"           value="2.9.0" />-->
   <preference name="phonegap-version" value="2.9.0" />
   <!-- all: current version of PhoneGap -->
-  <preference name="orientation"                value="default" />
+  <preference name="orientation"                value="portrait" />
   <!-- all: default means both landscape and portrait are enabled -->
   <preference name="target-device"              value="universal" />
   <!-- all: possible values handset, tablet, or universal -->
@@ -75,8 +75,8 @@
   <icon src="res/icons/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
   <icon src="res/icons/ios/icon_at_2x.png" gap:platform="ios" width="114" height="114" />
   -->
- <icon src="images/iconShip.png" gap:platform="ios" width="128" height="128" />
- <icon src="images/iconShip.png" gap:platform="android" gap:density="ldpi" />
+ <icon src="assets/iconAFI.png" gap:platform="ios" width="128" height="128" />
+ <icon src="assets/iconAFI.png" gap:platform="android" gap:density="ldpi" />
   <!-- retina iPad support: PhoneGap 2.5.0+ only -->
   <!--<icon src="res/icons/ios/icon-72_at_2x.png" gap:platform="ios" width="144" height="144" />-->
                   
