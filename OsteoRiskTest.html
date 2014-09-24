@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/utilities/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/utilities/jquery.js"></script>
+<link rel="stylesheet" href="css/jquery.mobile-1.1.1.min.css" />
+<script type="text/javascript" src="js/utilities/jquery.mobile-1.1.1.min.js"></script>
+    
+<script type="text/javascript" src="js/view/ViewOsteoRiskTest.js"></script>
+
+<script src="js/Main.js"></script>    
+<script src="js/view/MainView.js"></script>
+<script src="js/controller/MainController.js"></script>
+<script src="js/model/MainModel.js"></script>
+<script src="js/model/BackendDataContainer.js"></script>
+    
+<script type="text/javascript">
+    $(document).ready(function(){
+        main('OSTEO_TEST');
+        
+        $('#lastQuesSubmit').hide();
+        
+        $('#divWrapper').live("swiperight", function(){
+            if($('#divButtonArea span').hasClass('pressed')){
+                var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
+				
+            }
+            indexQuestion--;
+            setQuestion(indexQuestion);
+        });
+        
+        $('#divWrapper').live("swipeleft", function(){
+            if($('#divButtonArea span').hasClass('pressed')){
+                var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
+                if(boolIsSaved){
+                    indexQuestion++;
+                    setQuestion(indexQuestion);
+                }
+            }
+            else{
+                $('#divWrapWrapper').show();
+                $('#divAnsHint').addClass('showAnsHint');
+            }
+        });
+        
+        $('#spYes').click(function(){
+            $('#divButtonArea span').removeClass('pressed');
+            $(this).addClass('pressed');
+        });
+                           
+        $('#spNo').click(function(){
+            $('#divButtonArea span').removeClass('pressed');
+            $(this).addClass('pressed');
+        });
+        
+        $('#spBack').click(function(){
+            $('#lastQuesSubmit').hide();
+            if($('#divButtonArea span').hasClass('pressed')){
+                var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
+			}
+            indexQuestion--;
+            setQuestion(indexQuestion);
+        });
+        
+        
+        $('#spNext').click(function(){
+            if($('#divButtonArea span').hasClass('pressed')){
+                var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
+                if(boolIsSaved){
+                    indexQuestion++;
+                    setQuestion(indexQuestion);
+                }
+            }
+            else{
+                $('#divWrapWrapper').show();
+                $('#divAnsHint').addClass('showAnsHint');
+            }
+        });
+        
+        $('#spOK').click(function(){
+				$('#divAnsHint').removeClass('showAnsHint');
+                $('#divWrapWrapper').hide();
+        });
+        
+        $('#spSubmit').click(function(){
+            var boolIsArthritis= calculateOsteoTestResult();
+            if(boolIsArthritis){
+                var stageArthritis= calculateOsteoStage();
+                if(stageArthritis!=null){
+                    var url = "OsteoRiskTestResult.html?stage=" + encodeURIComponent(stageArthritis);
+                    window.location.href = url;
+                }
+            }
+            else{
+                var url = "OsteoRiskTestResult.html?stage=" + encodeURIComponent('fit');
+                window.location.href = url;
+            }
+        });
+        
+        $('#spCancel').click(function(){
+            $('#divSubmit').removeClass('showAnsHint');
+            $('#divWrapWrapper').hide();
+        });
+        
+        $('#spConfirm').click(function(){
+            if($('#divButtonArea span').hasClass('pressed')){
+                var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
+                if(boolIsSaved){
+                    showTestResult();
+                }
+            }
+            else{
+                $('#divWrapWrapper').show();
+                $('#divAnsHint').addClass('showAnsHint');
+            }
+        });
+        
+        
+    });
+</script>
+</head>
+
+<body>
+
+<div id="divWrapper" class="wrapper wrapOver">
+<div class="logoTop" id="logoTop"></div>
+	<div class="container">
+		<div class="resultArea">
+				<h3 class="grey cap">Osteoporosis Test</h3>
+		</div>
+		
+		<div class="activeQuesHint">
+			<ul id="ulActiveQuestionHint">
+			</ul>
+		</div>
+		<div class="questionBox">
+			<span id="spBack" class="moveBack"></span>
+			<span class="question"><h3 id="question"></h3></span>
+			<span id="spNext" class="moveNext"></span>
+		</div>
+		<div id="divButtonArea" class="radioButtonArea">
+			<a href="#" class="mrgn_rght20">
+				<span id="spYes" data-ans="1" class="checkRadio">Yes</span> 
+			</a>
+			<a href="#">
+				<span id="spNo" data-ans="0" class="checkRadio">No</span>
+			</a>
+		</div>
+		<div id="lastQuesSubmit" class="buttonArea">
+            <a href="#" class="button mrgBtm10">
+                <span id="spConfirm">Submit</span>
+            </a>
+		</div>
+	</div>
+	
+	<div id="divWrapWrapper" class="wrapWrapper">
+		<div id="divAnsHint" class="ansHint">
+			<h4>PLEASE ANSWER THE QUESTION</h4>
+			<img src="assets/choose.png"  class="selectHint mrgn5" />
+			<div class="radioButtonArea flt_cntr">
+				<a href="#" class="button" >
+					<span id="spOK">OK</span> 
+				</a>
+			</div>
+		</div>
+		
+		<div id="divSubmit" class="ansHint">
+			<h4 class="mrgn5">READY FOR RESULTS ??</h4>
+			<img src="assets/submit.png"  class="submitHint" />
+			<div class="radioButtonArea flt_cntr_wdth">
+				<a href="#" class="button mrgn20" >
+					<span id="spSubmit">Yes</span> 
+				</a>
+				
+				<a href="#" class="button mrgn20" >
+					<span id="spCancel">No</span> 
+				</a>
+			</div>
+		</div>
+        
+	</div>
+</div>
+</body>
+
+</html>

@@ -16,6 +16,10 @@ function initializeSubViews(_Model, _Controller, pageRef){
                 insViewArthritisRiskTest : new ViewArthritisRiskTest(this.modelRef, this.controllerRef)     //  Initializes/Triggers View Initialize
                 return insViewArthritisRiskTest;
             }
+            else if(pageRef == 'OSTEO_TEST'){
+                insViewOsteoRiskTest : new ViewOsteoRiskTest(this.modelRef, this.controllerRef)     //  Initializes/Triggers View Initialize
+                return insViewOsteoRiskTest;
+            }
       }
       catch(e)
       {

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/utilities/jquery.js"></script>
+    <script>
+    $(document).ready(function(){
+        if (window.location.search.split('?').length > 1) {
+            var param = window.location.search.split('?')[1];
+            var key = param.split('=')[0];
+            var value = decodeURIComponent(param.split('=')[1]);
+            switch(value.toUpperCase()){
+                case 'MILD':
+				    $('#preventMild').show();
+                    $('#preventModerate').hide();
+                    $('#preventSevere').hide();
+                    break;
+                case 'MODERATE':
+                    $('#preventMild').hide();
+                    $('#preventModerate').show();
+                    $('#preventSevere').hide();
+                    break;
+                case 'SEVERE':
+                    $('#preventMild').hide();
+                    $('#preventModerate').hide();
+                    $('#preventSevere').show();
+                    break;
+                default:
+                    break;
+            }
+        }
+        
+    });
+    </script>
+</head>
+
+<body>
+<div class="wrapper wrapOver">
+<div class="logoTop" id="logoTop"></div>
+	<div class="container">
+			<div class="resultArea">
+				<h3 class="grey cap">Treatment</h3>
+			</div>
+			
+			<!-- Prevent Mild -->
+			<div id="preventMild">
+				<div class="ques">
+					<h3 class="orng">Treatment for mild Arthritis needs</h3>
+					<ol class="mrgn5 points">
+						<li>Lifestyle</li>
+					</ol>
+				</div>
+				
+				
+				<!-- LifeStyle  -->
+				<div class="followSteps">
+					<div class="ques">
+						<h3 class="orng">Lifestyle</h3>
+					</div>
+					<div class="describe">
+						<ul class="imgArea">
+							<li><img src="assets/prevention/slide1/mild_life.png" /></li>
+						</ul>
+						<ul class="cureSteps">
+							<li>Swimming , walking </li>
+							<li>Fiber diet</li>
+							<li>Avoid Injuries</li>
+							<li>Avoid Squatting </li>
+							<li>Avoid sitting cross legged</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Prevent Moderate -->
+			<div id="preventModerate">
+				<div class="ques">
+					<h3 class="orng">Treatment for moderate Arthritis needs</h3>
+					<ol class="mrgn5 points">
+						<li>Lifestyle</li>
+						<li>Medicine</li>
+						<li>Physiotherapy</li>
+					</ol>
+				</div>
+				
+				
+				<!-- LifeStyle  -->
+				<div class="followSteps">
+					<div class="ques">
+						<h3 class="orng">Lifestyle</h3>
+					</div>
+					<div class="describe">
+						<ul class="imgArea">
+							<li><img src="assets/prevention/slide1/moderate_life.png" /></li>
+						</ul>
+						<ul class="cureSteps">
+							<li>Swimming , walking </li>
+							<li>Fiber diet</li>
+							<li>Avoid Injuries</li>
+							<li>Avoid Squatting </li>
+							<li>Avoid sitting cross legged</li>
+						</ul>
+					</div>
+				</div>
+				
+				<!-- Medicine  -->
+				<div class="followSteps">
+					<div class="ques">
+						<h3 class="orng">Medicine</h3>
+					</div>
+					<div class="describe">
+						<ul class="imgArea">
+							<li><img src="assets/prevention/slide1/moderate_med.png" /></li>
+						</ul>
+						<ul class="cureSteps">
+							<li>Pain Relievers</li>
+							<li>Local pain relieving ointments</li>
+							<li>Joint Lubricants</li>
+							<li>Glucosamine ( Amway )</li>
+						</ul>
+					</div>
+				</div>
+				
+				<!-- Physiotherapy -->
+				<div class="followSteps">
+					<div class="ques">
+						<h3 class="orng">Physiotherapy</h3>
+					</div>
+					<div class="describe">
+						<ul class="imgArea">
+							<li><img src="assets/prevention/slide1/moderate_phsy.png" /></li>
+						</ul>
+						<ul class="cureSteps">
+							<li>Quadriceps drill</li>
+							<li>Joint Mobilization</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Prevent Severe -->
+			<div id="preventSevere">
+				<div class="ques">
+					<h3 class="orng">Treatment for severe Arthritis needs</h3>
+					<ol class="mrgn5 points">
+						<li>Consult to the doctor.</li>
+					</ol>
+				</div>
+			</div>
+			
+	</div>
+
+</div>
+    
+</body>
+
+</html>
