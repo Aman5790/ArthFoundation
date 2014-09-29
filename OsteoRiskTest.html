@@ -24,20 +24,24 @@
         $('#lastQuesSubmit').hide();
         
         $('#divWrapper').live("swiperight", function(){
+            $('#lastQuesSubmit').hide();
             if($('#divButtonArea span').hasClass('pressed')){
                 var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
-				
+			}
+            if(indexQuestion != 1){
+                indexQuestion--;
+                setQuestion(indexQuestion);
             }
-            indexQuestion--;
-            setQuestion(indexQuestion);
         });
         
         $('#divWrapper').live("swipeleft", function(){
             if($('#divButtonArea span').hasClass('pressed')){
                 var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
                 if(boolIsSaved){
-                    indexQuestion++;
-                    setQuestion(indexQuestion);
+                    if(! checkLastQuestion()){
+                        indexQuestion++;
+                        setQuestion(indexQuestion);
+                    }
                 }
             }
             else{

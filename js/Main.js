@@ -1,5 +1,6 @@
 function main(Page){
  try{
+     debugger;
   initialize(Page);
  }
  catch(e)

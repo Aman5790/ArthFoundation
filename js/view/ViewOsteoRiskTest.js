@@ -5,7 +5,7 @@ function ViewOsteoRiskTest(_Model, _Controller){
     this.modelRef = _Model;
     this.controllerRef = _Controller;
     try{
-        oOsteoQA= this.LoadArthritisQA();
+        oOsteoQA= this.LoadOsteoQA();
         this.setListActiveQuestionHint();
         setQuestion(indexQuestion);
     }
@@ -15,7 +15,7 @@ function ViewOsteoRiskTest(_Model, _Controller){
  }
 
 ViewOsteoRiskTest.prototype = {
-    LoadArthritisQA: function(){
+    LoadOsteoQA: function(){
         return this.modelRef.allModels.insBackendDataContainer.getOsteoQA();
     },
     
