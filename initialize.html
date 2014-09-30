@@ -4,8 +4,10 @@
 <title></title>
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript" src="js/utilities/jquery.js"></script>
 <script type="text/javascript" src="js/utilities/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/view/ViewInitialize.js"></script>
     
 <script src="js/Main.js"></script>    
@@ -15,29 +17,64 @@
 <script src="js/model/BackendDataContainer.js"></script>
     
 <script type="text/javascript">
-    $(document).ready(function(){
-		$('#logoTop').hide();
-        $("#divLoader").css("display", "block");
-        
-        main('INITIALIZE_APP');
-        
-        setTimeout(hideLoader, 6000);
-        
-        function hideLoader(){
-            $('#divLoader').fadeOut('slow', function(){
-                $('#divContainer').show();
-				$('#logoTop').show();
-            });
+    if(IsPhoneGAP){
+        document.addEventListener("deviceready", onDeviceRed);              // Listener called when cordova file loads.
+        function onDeviceRed(){
+            document.addEventListener("backbutton", btnBackListener, false);
             
-            $('#spArthritis').click(function(){
-                window.location="Arthritis.html";
-            });
-            
-            $('#spOsteoporosis').click(function(){
-                window.location="Osteoporosis.html";
-            });
+            $('#logoTop').hide();
+            $("#divLoader").css("display", "block");
+
+            main('INITIALIZE_APP');
+
+            setTimeout(hideLoader, 6000);
+
+            function hideLoader(){
+                $('#divLoader').fadeOut('slow', function(){
+                    $('#divContainer').show();
+                    $('#logoTop').show();
+                });
+
+                $('#spArthritis').click(function(){
+                    window.location="Arthritis.html";
+                });
+
+                $('#spOsteoporosis').click(function(){
+                    window.location="Osteoporosis.html";
+                });
+            }
+
+            function btnBackListener(){
+                return false;
+            }
         }
-    });
+    }
+    else{
+            $('#logoTop').hide();
+            $("#divLoader").css("display", "block");
+
+            main('INITIALIZE_APP');
+
+            setTimeout(hideLoader, 6000);
+
+            function hideLoader(){
+                $('#divLoader').fadeOut('slow', function(){
+                    $('#divContainer').show();
+                    $('#logoTop').show();
+                });
+
+                $('#spArthritis').click(function(){
+                    window.location="Arthritis.html";
+                });
+
+                $('#spOsteoporosis').click(function(){
+                    window.location="Osteoporosis.html";
+                });
+            }
+    }
+                
+    
+    
 </script>
 </head>
 

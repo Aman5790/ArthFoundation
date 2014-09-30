@@ -10,7 +10,7 @@ function ViewArthritisRiskTest(_Model, _Controller){
         setQuestion(indexQuestion);
     }
     catch(e){
-        window.location='error.html';
+        
     }
  }
 
@@ -33,7 +33,7 @@ ViewArthritisRiskTest.prototype = {
 
 function setQuestion(index){
     if(isNaN(index)){
-        window.location="error.html"
+        
     }
     else{
         if(oArthritisQA !=null && oArthritisQA.QA.length>0 ){

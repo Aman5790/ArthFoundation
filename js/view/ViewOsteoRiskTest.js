@@ -10,7 +10,7 @@ function ViewOsteoRiskTest(_Model, _Controller){
         setQuestion(indexQuestion);
     }
     catch(e){
-        window.location='error.html';
+        
     }
  }
 
@@ -33,7 +33,7 @@ ViewOsteoRiskTest.prototype = {
 
 function setQuestion(index){
     if(isNaN(index)){
-        window.location="error.html"
+        
     }
     else{
         if(oOsteoQA !=null && oOsteoQA.QA.length>0 ){

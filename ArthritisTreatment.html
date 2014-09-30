@@ -4,39 +4,73 @@
 <title></title>
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="js/utilities/jquery.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
     <script>
-    $(document).ready(function(){
-        if (window.location.search.split('?').length > 1) {
-            var param = window.location.search.split('?')[1];
-            var key = param.split('=')[0];
-            var value = decodeURIComponent(param.split('=')[1]);
-            switch(value.toUpperCase()){
-                case 'MILD':
-				    $('#preventMild').show();
-                    $('#preventModerate').hide();
-                    $('#preventSevere').hide();
-                    break;
-                case 'MODERATE':
-                    $('#preventMild').hide();
-                    $('#preventModerate').show();
-                    $('#preventSevere').hide();
-                    break;
-                case 'SEVERE':
-                    $('#preventMild').hide();
-                    $('#preventModerate').hide();
-                    $('#preventSevere').show();
-                    break;
-                default:
-                    break;
+        if(IsPhoneGAP){
+            document.addEventListener("deviceready", onDeviceRed);
+            function onDeviceRed(){
+                if (window.location.search.split('?').length > 1) {
+                    var param = window.location.search.split('?')[1];
+                    var key = param.split('=')[0];
+                    var value = decodeURIComponent(param.split('=')[1]);
+                    switch(value.toUpperCase()){
+                        case 'MILD':
+                            $('#preventMild').show();
+                            $('#preventModerate').hide();
+                            $('#preventSevere').hide();
+                            break;
+                        case 'MODERATE':
+                            $('#preventMild').hide();
+                            $('#preventModerate').show();
+                            $('#preventSevere').hide();
+                            break;
+                        case 'SEVERE':
+                            $('#preventMild').hide();
+                            $('#preventModerate').hide();
+                            $('#preventSevere').show();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                $('#lnkContactUs').click(function(e){
+                    window.open(encodeURI(urlContactUs), '_system', 'location=yes')
+                });
             }
         }
-        
-        $('#lnkContactUs').click(function(e){
-            window.open('http://www.arthfound.org/', '_system');
-        });
-        
-    });
+        else{
+            $(document).ready(function(){
+                if (window.location.search.split('?').length > 1) {
+                    var param = window.location.search.split('?')[1];
+                    var key = param.split('=')[0];
+                    var value = decodeURIComponent(param.split('=')[1]);
+                    switch(value.toUpperCase()){
+                        case 'MILD':
+                            $('#preventMild').show();
+                            $('#preventModerate').hide();
+                            $('#preventSevere').hide();
+                            break;
+                        case 'MODERATE':
+                            $('#preventMild').hide();
+                            $('#preventModerate').show();
+                            $('#preventSevere').hide();
+                            break;
+                        case 'SEVERE':
+                            $('#preventMild').hide();
+                            $('#preventModerate').hide();
+                            $('#preventSevere').show();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                $('#lnkContactUs').click(function(e){
+                    window.open(encodeURI(urlContactUs), '_system', 'location=yes')
+                });
+            });
+        }
     </script>
 </head>
 
