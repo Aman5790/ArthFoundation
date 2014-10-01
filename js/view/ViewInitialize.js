@@ -32,7 +32,7 @@ ViewInitialize.prototype = {
                                           {"Q":"Have you lost more than 3 cms. (Just over 1 inch) in height?","A":"NULL"},\
                                           {"Q":"Do you take alcohol more than safe limits (30 ml 5 days a week)?","A":"NULL"},\
                                           {"Q":"Do you smoke more than 20 cigarettes a day?","A":"NULL"},\
-                                          {"Q":"Do you suffer frequently with loose motions (caused by chronic gastric diseases like crohn\'s disease or celiac disease?","A":"NULL"},\
+                                          {"Q":"Do you suffer frequently with loose motions (caused by chronic gastric diseases like crohn\'s disease or celiac disease)?","A":"NULL"},\
                                           {"Q":"Did you undergo menopause before the age of 45?","A":"NULL"},\
                                           {"Q":"Have your periods stopped for 12 months or more in life time (other than because of pregnancy)?","A":"NULL"},\
                                           {"Q":"Have you been regularly consuming medicines for more than 3 years for Epilepsy, Hypothyroidism or chronic gastritis / ulcer?","A":"NULL"}\

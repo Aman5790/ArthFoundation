@@ -11,7 +11,6 @@
             var param = window.location.search.split('?')[1];
             var key = param.split('=')[0];
             var value = decodeURIComponent(param.split('=')[1]);
-            $('#hdnStage').val(value.toUpperCase());
             $('#divStage span').removeClass('opaque');
             $('#divImage span').removeClass('hide');
             $('#divButtonArea a').removeClass('hide');
@@ -50,10 +49,8 @@
         });
         
         $('#lnkTreatment').click(function(){
-            if($('#hdnStage').val() !=""){
-                var url = "OsteoTreatment.html?stage=" + encodeURIComponent($('#hdnStage').val());
-                window.location.href = url;
-            }
+            var url = "OsteoTreatment.html";
+            window.location.href = url;
         });
         
     });

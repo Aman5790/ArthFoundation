@@ -2,6 +2,7 @@
 <html>
 <head>
 <title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/common.js"></script>
@@ -11,30 +12,6 @@
         if(IsPhoneGAP){
             document.addEventListener("deviceready", onDeviceRed);
             function onDeviceRed(){
-                if (window.location.search.split('?').length > 1) {
-                    var param = window.location.search.split('?')[1];
-                    var key = param.split('=')[0];
-                    var value = decodeURIComponent(param.split('=')[1]);
-                    switch(value.toUpperCase()){
-                        case 'MILD':
-                            $('#preventMild').show();
-                            $('#preventModerate').hide();
-                            $('#preventSevere').hide();
-                            break;
-                        case 'MODERATE':
-                            $('#preventMild').hide();
-                            $('#preventModerate').show();
-                            $('#preventSevere').hide();
-                            break;
-                        case 'SEVERE':
-                            $('#preventMild').hide();
-                            $('#preventModerate').hide();
-                            $('#preventSevere').show();
-                            break;
-                        default:
-                            break;
-                    }
-                }
                 $('#lnkContactUs').click(function(e){
                     window.open(encodeURI(urlContactUs), '_system', 'location=yes')
                 });
@@ -42,30 +19,6 @@
         }
         else{
             $(document).ready(function(){
-                if (window.location.search.split('?').length > 1) {
-                    var param = window.location.search.split('?')[1];
-                    var key = param.split('=')[0];
-                    var value = decodeURIComponent(param.split('=')[1]);
-                    switch(value.toUpperCase()){
-                        case 'MILD':
-                            $('#preventMild').show();
-                            $('#preventModerate').hide();
-                            $('#preventSevere').hide();
-                            break;
-                        case 'MODERATE':
-                            $('#preventMild').hide();
-                            $('#preventModerate').show();
-                            $('#preventSevere').hide();
-                            break;
-                        case 'SEVERE':
-                            $('#preventMild').hide();
-                            $('#preventModerate').hide();
-                            $('#preventSevere').show();
-                            break;
-                        default:
-                            break;
-                    }
-                }
                 $('#lnkContactUs').click(function(e){
                     window.open(encodeURI(urlContactUs), '_system', 'location=yes')
                 });
@@ -84,112 +37,103 @@
 				<h3 class="grey cap">Treatment</h3>
 			</div>
 			
-			<!-- Prevent Mild -->
-			<div id="preventMild">
+			<!-- Treatment -->
+			<div>
 				<div class="ques">
-					<h3 class="orng">Treatment for mild Arthritis needs</h3>
+					<h3 class="orng">Treatment for Osteoporosis needs</h3>
 					<ol class="mrgn5 points">
-						<li>Lifestyle</li>
+                        <li>Risk Factor Reduction</li>
+                        <li>Nutritional Recommendations</li>
+                        <li>Pharmacological Therapies</li>
+                        <li>Surgical Treatment</li>
+                        <li>Miscellaneous (Exercise, Psychological and Practical Support)</li>
 					</ol>
 				</div>
 				
 				
-				<!-- LifeStyle  -->
+				<!-- Risk Factor Reduction  -->
 				<div class="followSteps">
 					<div class="ques">
-						<h3 class="orng">Lifestyle</h3>
-					</div>
-					<div class="describe">
-						<ul class="imgArea">
-							<li><img src="assets/prevention/slide1/mild_life.png" /></li>
-						</ul>
-						<ul class="cureSteps">
-							<li>Swimming , walking </li>
-							<li>Fiber diet</li>
-							<li>Avoid Injuries</li>
-							<li>Avoid Squatting </li>
-							<li>Avoid sitting cross legged</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			
-			<!-- Prevent Moderate -->
-			<div id="preventModerate">
-				<div class="ques">
-					<h3 class="orng">Treatment for moderate Arthritis needs</h3>
-					<ol class="mrgn5 points">
-						<li>Lifestyle</li>
-						<li>Medicine</li>
-						<li>Physiotherapy</li>
-					</ol>
-				</div>
-				
-				
-				<!-- LifeStyle  -->
-				<div class="followSteps">
-					<div class="ques">
-						<h3 class="orng">Lifestyle</h3>
+						<h3 class="orng">Risk Factor Reduction</h3>
 					</div>
 					<div class="describe">
 						<ul class="imgArea">
 							<li><img src="assets/prevention/slide1/moderate_life.png" /></li>
 						</ul>
 						<ul class="cureSteps">
-							<li>Swimming , walking </li>
-							<li>Fiber diet</li>
-							<li>Avoid Injuries</li>
-							<li>Avoid Squatting </li>
-							<li>Avoid sitting cross legged</li>
+                            <li>Supervision in cases of steroids & thyroid hormone replacement Anti Epilepsy & antacid therapy</li>
+                            <li>Cessation of smoking and alcohol intake</li> 
+                            <li>Eye-sight correction to reduce falls</li>
+                            <li>Hip protectors to avoid hip fracture in elderly</li>
+                            <li>Avoid exposed wires, slippery rugs, loose carpets etc inside the home.</li>
 						</ul>
 					</div>
 				</div>
 				
-				<!-- Medicine  -->
+				<!-- Nutritional Recommendations  -->
 				<div class="followSteps">
 					<div class="ques">
-						<h3 class="orng">Medicine</h3>
+						<h3 class="orng">Nutritional Recommendations</h3>
 					</div>
 					<div class="describe">
 						<ul class="imgArea">
 							<li><img src="assets/prevention/slide1/moderate_med.png" /></li>
 						</ul>
 						<ul class="cureSteps">
-							<li>Pain Relievers</li>
-							<li>Local pain relieving ointments</li>
-							<li>Joint Lubricants</li>
-							<li>Glucosamine ( Amway )</li>
+							<li>Calcium</li>
+							<li>Vitamin D</li>
 						</ul>
 					</div>
 				</div>
 				
-				<!-- Physiotherapy -->
+				<!-- Surgical Treatment -->
 				<div class="followSteps">
 					<div class="ques">
-						<h3 class="orng">Physiotherapy</h3>
+						<h3 class="orng">Surgical Treatment</h3>
 					</div>
 					<div class="describe">
 						<ul class="imgArea">
 							<li><img src="assets/prevention/slide1/moderate_phsy.png" /></li>
 						</ul>
 						<ul class="cureSteps">
-							<li>Quadriceps drill</li>
-							<li>Joint Mobilization</li>
+							<li>Fragility Fractures – commonly around –Wrist, Hip, Pelvis, Spine
+Some times the fracture  union not possible with conservative treatment like POP then surgical interventions available
+For more info - please visit AFI website: <a id="lnkContactUs" href="#">www.arthfound.org</a>
+</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			
-			<!-- Prevent Severe -->
-			<div id="preventSevere">
-				<div class="ques">
-					<h3 class="orng">Treatment for severe Osteoporosis needs ?</h3>
-					<ol class="mrgn5 points">
-						<li>Consult and Orthopedic Specialist ASAP</li>
-						<li>Want suggestions about Ortho Surgeons in your City? <a id="lnkContactUs" href="#">Click here</a> </li>
-					</ol>
+			<!-- Miscellaneous  -->
+				<div class="followSteps">
+					<div class="ques">
+						<h3 class="orng">Miscellaneous</h3>
+					</div>
+					<div class="describe">
+						<ul class="imgArea">
+							<li><img src="assets/prevention/slide1/moderate_med.png" /></li>
+						</ul>
+						<ul class="cureSteps">
+							<li>Exercise
+                            <ul>
+                                <li>Weight-bearing exercise</li> 
+                                <li>Maintains and builds up bone mass</li>
+                                <li>Better balance</li> 
+                                <li>Fall prevention</li>
+
+                            </ul>
+                            </li>
+							<li>Psychological and practical support
+                            <ul>
+                                
+                                <li>Rehabilitation</li>
+                                <li>Counseling for prevention of second fracture, treatment of Osteoporosis</li>    
+                            </ul>
+                            </li>
+						</ul>
+					</div>
 				</div>
-			</div>
 			
 	</div>
 

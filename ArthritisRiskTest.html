@@ -73,7 +73,7 @@
         });
         
         
-        $('#spNext').click(function(){
+        $('#spNext').click(function(e){
             if($('#divButtonArea span').hasClass('pressed')){
                 var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
                 if(boolIsSaved){
@@ -125,7 +125,7 @@
             }
         });
         
-        $('#lnkHome').click(function(){
+        $('#lnkHome').click(function(e){
             window.location="welcome.html";
         });
     });
