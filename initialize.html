@@ -8,39 +8,19 @@
 <script type="text/javascript" src="js/utilities/jquery.js"></script>
 <script type="text/javascript" src="js/utilities/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/view/ViewInitialize.js"></script>
-    
-<script src="js/Main.js"></script>    
-<script src="js/view/MainView.js"></script>
-<script src="js/controller/MainController.js"></script>
-<script src="js/model/MainModel.js"></script>
-<script src="js/model/BackendDataContainer.js"></script>
     
 <script type="text/javascript">
     if(IsPhoneGAP){
         document.addEventListener("deviceready", onDeviceRed);              // Listener called when cordova file loads.
         function onDeviceRed(){
             document.addEventListener("backbutton", btnBackListener, false);
-            
-            $('#logoTop').hide();
             $("#divLoader").css("display", "block");
-
-            main('INITIALIZE_APP');
 
             setTimeout(hideLoader, 6000);
 
             function hideLoader(){
                 $('#divLoader').fadeOut('slow', function(){
-                    $('#divContainer').show();
-                    $('#logoTop').show();
-                });
-
-                $('#spArthritis').click(function(){
-                    window.location="Arthritis.html";
-                });
-
-                $('#spOsteoporosis').click(function(){
-                    window.location="Osteoporosis.html";
+                    window.location="welcome.html"
                 });
             }
 
@@ -50,27 +30,17 @@
         }
     }
     else{
-            $('#logoTop').hide();
+        $(document).ready(function(){
             $("#divLoader").css("display", "block");
-
-            main('INITIALIZE_APP');
 
             setTimeout(hideLoader, 6000);
 
             function hideLoader(){
                 $('#divLoader').fadeOut('slow', function(){
-                    $('#divContainer').show();
-                    $('#logoTop').show();
-                });
-
-                $('#spArthritis').click(function(){
-                    window.location="Arthritis.html";
-                });
-
-                $('#spOsteoporosis').click(function(){
-                    window.location="Osteoporosis.html";
+                    window.location="welcome.html"
                 });
             }
+        });
     }
                 
     
@@ -80,29 +50,8 @@
 
 <body>
 <div class="wrapper wrapOver">
-<div class="logoTop" id="logoTop"></div>
 	<div id="divLoader" class="preLoader" style="display:none">
 		<img class="logo" src="assets/logo.png" />
-	</div>
-	<div id="divContainer" class="container">
-		<div class="welcomeBox">
-			<div class="headingArea">
-				<h1 class="grey">Welcome<br><span class="cap headText">Arthritis Foundation of India Trust</span></h1>
-				<blockquote>Dedicated to strong bones</blockquote>
-			</div>
-			<div class="about">
-			<h4>AFI in its endeavour to take osteoporosis and Bone Health to common people and ultimately attain our goal of total Bone Health. 
-			Our slogan is<b> Bone Health – a Right, Realize it<b></h4>
-			</div>
-			<div class="buttonArea">
-				<a href="#" class="button mrgBtm10">
-					<span id="spArthritis">Arthritis</span>
-				</a>
-				<a href="#" class="button mrgBtm10">
-					<span id="spOsteoporosis">Osteoporosis</span>
-				</a>
-			</div>
-		</div>
 	</div>
 </div>
 </body>

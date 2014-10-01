@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/utilities/jquery.js"></script>
+<script type="text/javascript" src="js/view/ViewInitialize.js"></script>
+    
+<script src="js/Main.js"></script>    
+<script src="js/view/MainView.js"></script>
+<script src="js/controller/MainController.js"></script>
+<script src="js/model/MainModel.js"></script>
+<script src="js/model/BackendDataContainer.js"></script>
+    <script>
+        $(document).ready(function(){
+            main('INITIALIZE_APP');
+            $('#spArthritis').click(function(){
+                window.location="Arthritis.html";
+            });
+
+            $('#spOsteoporosis').click(function(){
+                window.location="Osteoporosis.html";
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div class="wrapper wrapOver">
+<div class="logoTop" id="logoTop"></div>
+	
+	<div id="divContainer" class="container">
+		<div class="welcomeBox">
+			<div class="headingArea">
+				<h1 class="grey">Welcome<br><span class="cap headText">Arthritis Foundation of India Trust</span></h1>
+				<blockquote>Dedicated to strong bones</blockquote>
+			</div>
+			<div class="about">
+			<h4>AFI in its endeavour to take osteoporosis and Bone Health to common people and ultimately attain our goal of total Bone Health. 
+			Our slogan is<b> Bone Health – a Right, Realize it<b></h4>
+			</div>
+			<div class="buttonArea">
+				<a href="#" class="button mrgBtm10">
+					<span id="spArthritis">Arthritis</span>
+				</a>
+				<a href="#" class="button mrgBtm10">
+					<span id="spOsteoporosis">Osteoporosis</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
+</html>
