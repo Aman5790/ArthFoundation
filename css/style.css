@@ -748,6 +748,7 @@ box-sizing: border-box;
 		float: left;
 		width: 100%;
 		margin-top: 15px;
+		
 	}
 	
 	.cureSteps{
@@ -760,6 +761,13 @@ box-sizing: border-box;
 		font-size: 1.5em;
 		line-height: 1.3em;
 		list-style: lower-latin;
+		float:left;
+	}
+	
+	.cureSteps li ol li{
+		font-size: .8em;
+		line-height: 1.3em;
+		list-style: initial;
 	}
 	
 	li a{
@@ -773,7 +781,69 @@ box-sizing: border-box;
 	.spc_top20{
 		margin-top: 20px;
 	}
+	
+	.flt_lft{
+		float: left;
+	}
+	
+	.skyColor{
+		color: #21AAD8 !important;
+	}
+	
+	.textLeft{
+		text-align: left;
+		}
+		
+	.mrgn15{
+		margin-left: 15px;
+	}
 
+	.table{
+		float: left;
+		width: 98%;
+		border: 1px solid #fff;
+	}
+	
+	.left_sec, .right_sec{
+		width: 50%;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		font-size: .7em;
+		text-align: center;
+		vertical-align: middle;
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		float: left;
+	}
+	
+	.left_sec{
+		border-right: 1px solid #fff;
+	}
+	
+	.right_sec{
+		border-left: 1px solid #fff;
+		margin-left: -1px;
+	}
+	
+	.list_none{
+		list-style: none !important;
+	}
+	
+	.wid_100{
+		width: 100%;
+	}
+	
+	.clear{
+		clear: both;
+		float: left;
+	}
+	
+	.clear_border{
+		width: 100%;
+		border: 1px solid #fff;
+	}
 @media only screen
 and (max-width : 767px) {
 	.wrapper{
