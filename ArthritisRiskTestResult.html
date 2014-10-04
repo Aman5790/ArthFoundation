@@ -11,7 +11,7 @@
             var param = window.location.search.split('?')[1];
             var key = param.split('=')[0];
             var value = decodeURIComponent(param.split('=')[1]);
-            $('#hdnStage').val(value.toUpperCase());
+            var treatmentURL=null;
             $('#divStage span').removeClass('opaque');
             $('#divImage span').removeClass('hide');
             $('#divButtonArea a').removeClass('hide');
@@ -25,16 +25,19 @@
                     $('#spFit,#spModerate,#spSevere').addClass('opaque');
                     $('#imgFit,#imgModerate,#imgSevere').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
+                    treatmentURL= "ArthritisMildTreatment.html";
                     break;
                 case 'MODERATE':
                     $('#spFit,#spMild,#spSevere').addClass('opaque');
                     $('#imgFit,#imgMild,#imgSevere').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
+                    treatmentURL= "ArthritisModerateTreatment.html";
                     break;
                 case 'SEVERE':
                     $('#spFit,#spModerate,#spMild').addClass('opaque');
                     $('#imgFit,#imgModerate,#imgMild').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
+                    treatmentURL= "ArthritisSevereTreatment.html";
                     break;
                 default:
                     break;
@@ -50,10 +53,7 @@
         });
         
         $('#lnkTreatment').click(function(){
-            if($('#hdnStage').val() !=""){
-                var url = "ArthritisTreatment.html?stage=" + encodeURIComponent($('#hdnStage').val());
-                window.location.href = url;
-            }
+            window.location.href = treatmentURL;
         });
         
     });

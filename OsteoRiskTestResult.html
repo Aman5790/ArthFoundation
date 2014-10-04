@@ -16,10 +16,13 @@
             $('#divButtonArea a').removeClass('hide');
             switch(value.toUpperCase()){
                 case 'FIT':
-                    $('#spMild,#spModerate,#spSevere').addClass('opaque');
-                    $('#imgMild,#imgModerate,#imgSevere').addClass('hide');
-                    $('#lnkTreatment').addClass('hide');
+                    //$('#spMild,#spModerate,#spSevere').addClass('opaque');
+                    //$('#imgMild,#imgModerate,#imgSevere').addClass('hide');
+                    $('#spSevere').addClass('opaque');
+                    $('#imgSevere').addClass('hide');
+                    $('#lnkDiagnose').addClass('hide');
                     break;
+                /* 
                 case 'MILD':
                     $('#spFit,#spModerate,#spSevere').addClass('opaque');
                     $('#imgFit,#imgModerate,#imgSevere').addClass('hide');
@@ -30,9 +33,10 @@
                     $('#imgFit,#imgMild,#imgSevere').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
                     break;
+                */
                 case 'SEVERE':
-                    $('#spFit,#spModerate,#spMild').addClass('opaque');
-                    $('#imgFit,#imgModerate,#imgMild').addClass('hide');
+                    $('#spFit').addClass('opaque');
+                    $('#imgFit').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
                     break;
                 default:
@@ -48,8 +52,8 @@
             window.location.href = url;
         });
         
-        $('#lnkTreatment').click(function(){
-            var url = "OsteoTreatment.html";
+        $('#lnkDiagnose').click(function(){
+            var url = "OsteoDiagnosis.html";
             window.location.href = url;
         });
         
@@ -66,23 +70,27 @@
 				<h3 class="grey cap">Result</h3>
 			</div>
 			<div id="divStage" class="stage">
-                <span id="spFit" class="green"><h4>Fit</h4></span>
-				<span id="spMild" class="sky"><h4>Mild</h4></span>
-				<span id="spModerate" class="orange"><h4>Moderate</h4></span>
-				<span id="spSevere" class="red"><h4>Severe</h4></span>
+                <span id="spFit" class="green"><h4>You appear to be <b>Fit</b></h4></span>
+				<!--
+                <span id="spMild" class="sky"><h4>You are at risk</h4></span>
+				<span id="spModerate" class="orange"><h4>You are at <b>Moderate</b> risk</h4></span>
+                -->
+				<span id="spSevere" class="red"><h4>You are at risk</h4></span>
 			</div>
 			<div id="divImage" class="bind100 center">
                 <img id="imgFit" src="assets/fit.png" class="" />
-				<img id="imgMild" src="assets/mild.png"  class="" />
+				<!--
+                <img id="imgMild" src="assets/mild.png"  class="" />
 				<img id="imgModerate" src="assets/moderate.png" class="" />
+                -->
 				<img id="imgSevere" src="assets/severe.png" class="" />
 			</div>
 			<div id="divButtonArea" class="buttonArea">
 				<a id="lnkPrevention" href="#" class="button fnt25 mrgBtm10">
 					<span class="min125">Prevention</span>
 				</a>
-				<a id="lnkTreatment" href="#" class="button fnt25 mrgBtm10">
-					<span class="min125">Treatment</span>
+				<a id="lnkDiagnose" href="#" class="button fnt25 mrgBtm10">
+					<span class="min125">Click Here</span>
 				</a>
 			</div>
 	</div>

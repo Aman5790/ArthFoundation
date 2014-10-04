@@ -92,11 +92,11 @@
         $('#spSubmit').click(function(){
             var boolIsArthritis= calculateOsteoTestResult();
             if(boolIsArthritis){
-                var stageArthritis= calculateOsteoStage();
-                if(stageArthritis!=null){
-                    var url = "OsteoRiskTestResult.html?stage=" + encodeURIComponent(stageArthritis);
+                //var stageArthritis= calculateOsteoStage();
+                //if(stageArthritis!=null){
+                    var url = "OsteoRiskTestResult.html?stage=" + encodeURIComponent('Severe'); //encodeURIComponent(stageArthritis);
                     window.location.href = url;
-                }
+                //}
             }
             else{
                 var url = "OsteoRiskTestResult.html?stage=" + encodeURIComponent('fit');
