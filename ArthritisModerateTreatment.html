@@ -6,10 +6,24 @@
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/utilities/jquery.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    
     <script>
-        function openSite(){
-            window.open(encodeURI(urlContactUs), '_system', 'location=yes')
-            return false;
+        if(IsPhoneGAP){
+            document.addEventListener("deviceready", onDeviceRed);
+            function onDeviceRed(){
+                $('#lnkContactUs').click(function(e){
+                    window.open(encodeURI(urlContactUs), '_system', 'location=yes')
+                });
+            }
+        }
+        else{
+            $(document).ready(function(){
+                $('#lnkContactUs').click(function(e){
+                    window.open(encodeURI(urlContactUs), '_system', 'location=yes')
+                });
+            });
         }
     </script>
 </head>
@@ -32,7 +46,7 @@
                         <li>Exercise advisory</li>
                         <li>Precautions</li>
 						<li>Medicines</li>
-                        <li>Consult orthopedic surgeon. <a onclick="return openSite();" href="#">Click here</a></li>
+                        <li>Consult orthopedic surgeon. <a id="lnkContactUs" href="#">Click here</a></li>
 					</ol>
 				</div>
 				
@@ -110,7 +124,7 @@
 				</div>
 				
 			</div>
-			
+			<div class="bottom_space"></div>
 			
 
 </div>

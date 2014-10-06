@@ -90,8 +90,8 @@
         });
         
         $('#spSubmit').click(function(){
-            var boolIsArthritis= calculateOsteoTestResult();
-            if(boolIsArthritis){
+            var boolIsOsteo= calculateOsteoTestResult();
+            if(boolIsOsteo){
                 //var stageArthritis= calculateOsteoStage();
                 //if(stageArthritis!=null){
                     var url = "OsteoRiskTestResult.html?stage=" + encodeURIComponent('Severe'); //encodeURIComponent(stageArthritis);
@@ -189,6 +189,7 @@
 		</div>
         
 	</div>
+	<div class="bottom_space"></div>
 </div>
 </body>
 

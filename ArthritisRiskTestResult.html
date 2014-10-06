@@ -25,18 +25,21 @@
                     $('#spFit,#spModerate,#spSevere').addClass('opaque');
                     $('#imgFit,#imgModerate,#imgSevere').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
+                    $('#txtPrevention').addClass('hide');
                     treatmentURL= "ArthritisMildTreatment.html";
                     break;
                 case 'MODERATE':
                     $('#spFit,#spMild,#spSevere').addClass('opaque');
                     $('#imgFit,#imgMild,#imgSevere').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
+                    $('#txtPrevention').addClass('hide');
                     treatmentURL= "ArthritisModerateTreatment.html";
                     break;
                 case 'SEVERE':
                     $('#spFit,#spModerate,#spMild').addClass('opaque');
                     $('#imgFit,#imgModerate,#imgMild').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
+                    $('#txtPrevention').addClass('hide');
                     treatmentURL= "ArthritisSevereTreatment.html";
                     break;
                 default:
@@ -71,7 +74,7 @@
 			
 			
 			<div id="divStage" class="stage">
-				<span id="spFit" class="green"><h4>Fit</h4></span>
+				<span id="spFit" class="green"><h4>You appear to be <b>Fit</b></h4></span>
 				<span id="spMild" class="sky"><h4>Mild</h4></span>
 				<span id="spModerate" class="orange"><h4>Moderate</h4></span>
 				<span id="spSevere" class="red"><h4>Severe</h4></span>
@@ -83,6 +86,9 @@
 				<img id="imgSevere" src="assets/severe.png" class="" />
 			</div>
 			<div id="divButtonArea" class="buttonArea">
+				<span id="txtPrevention" class="preventionArea">
+					<h4 class="mrgn5"><blockquote class="cap italic cyan"> prevention is better than cure </blockquote></h4>
+				</span>	
 				<a id="lnkPrevention" href="#" class="button fnt25 mrgBtm10">
 					<span class="min125">Prevention</span>
 				</a>
@@ -90,6 +96,7 @@
 					<span class="min125">Treatment</span>
 				</a>
 			</div>
+			<!--<div class="bottom_space"></div>-->
 	</div>
 
 </div>

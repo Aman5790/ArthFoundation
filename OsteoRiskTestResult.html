@@ -21,12 +21,14 @@
                     $('#spSevere').addClass('opaque');
                     $('#imgSevere').addClass('hide');
                     $('#lnkDiagnose').addClass('hide');
+                    $('#txtDiagnose').addClass('hide');
                     break;
                 /* 
                 case 'MILD':
                     $('#spFit,#spModerate,#spSevere').addClass('opaque');
                     $('#imgFit,#imgModerate,#imgSevere').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
+                    $('#txtPrevention').addClass('hide');
                     break;
                 case 'MODERATE':
                     $('#spFit,#spMild,#spSevere').addClass('opaque');
@@ -38,6 +40,7 @@
                     $('#spFit').addClass('opaque');
                     $('#imgFit').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
+                    $('#txtPrevention').addClass('hide');
                     break;
                 default:
                     break;
@@ -86,12 +89,19 @@
 				<img id="imgSevere" src="assets/severe.png" class="" />
 			</div>
 			<div id="divButtonArea" class="buttonArea">
+				<span id="txtPrevention" class="preventionArea">
+					<h4 class="mrgn5"><blockquote class="cap italic orng"> prevention is better than cure </blockquote></h4>
+				</span>
 				<a id="lnkPrevention" href="#" class="button fnt25 mrgBtm10">
 					<span class="min125">Prevention</span>
 				</a>
+				<span id="txtDiagnose" class="preventionArea">
+					<h4 class="mrgn5">Want to diagnose Osteoporosis ?</h4>
+				</span>
 				<a id="lnkDiagnose" href="#" class="button fnt25 mrgBtm10">
 					<span class="min125">Click Here</span>
 				</a>
+				<!--<div class="bottom_space"></div>-->
 			</div>
 	</div>
 

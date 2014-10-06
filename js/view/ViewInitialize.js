@@ -26,7 +26,7 @@ ViewInitialize.prototype = {
                                       ]}'; 
         
         localStorage['QA_Osteo']='{"QA":[\
-                                          {"Q":"Has either of your parents been diagnosed with osteoporosis or had a fracture after a minor fall (a fall from standing height or less)?","A":"NULL"},\
+                                          {"Q":"Has either of your parents been diagnosed with Osteoporosis or had a fracture after a minor fall (a fall from standing height or less)?","A":"NULL"},\
                                           {"Q":"Did you ever have fracture after a minor fall as an adult?","A":"NULL"},\
                                           {"Q":"Have you taken corticosteroid tablets (cortisone, prednisone, etc.) for more than 3 months?","A":"NULL"},\
                                           {"Q":"Have you lost more than 3 cms. (Just over 1 inch) in height?","A":"NULL"},\

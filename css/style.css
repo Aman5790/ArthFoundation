@@ -128,6 +128,10 @@ font-size: 1.5em;
 	text-transform: uppercase !important;
 }
 
+.italic{
+	font-style :italic !important;
+}
+
 .headingArea{
 	float: left;
 	width: 100%;
@@ -537,27 +541,27 @@ background: #8c7f80;
 .stage{
 	width: 100%;
 	float: left;
-	margin: 20px 0;
+	margin: 20px auto;
 	text-align: center;
-	transform: translate(-50%,0%);
-	-webkit-transform: translate(-50%,0%);
-	-moz-transform: translate(-50%,0%);
-	margin-left: 60%;
+	padding: 0 25%;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 
 .stage span{
-	width: 20%;
-	display: inline-block;
+	width: 100%;
+	/* display: inline-block; */
 	margin: 0;
 	padding: 15px 0;
 	float: left;
 	vertical-align: middle;
 	position: relative;
 	word-break: break-all;
-	-webkit-box-shadow: inset -2px 2px 4px #000;
-	  -moz-box-shadow: inset -2px 2px 4px #000;
-	  box-shadow: inset -2px 2px 4px #000;
-	  -webkit-transform: scale(1.25);
+	-webkit-box-shadow: inset -2px 2px 1px #000;
+	-moz-box-shadow: inset -2px 2px 1px #000;
+	box-shadow: inset -2px 2px 1px #000;
+	-webkit-transform: scale(1.25);
 	-ms-transform: scale(1.25);
 	transform: scale(1.25);
 }
@@ -583,11 +587,7 @@ background: #8c7f80;
 }
 
 .opaque{
-	background: rgba(0,0,0,.5) !important;
-	z-index:1 !important;
-	  -webkit-transform: scale(1) !important;
-	-ms-transform: scale(1) !important;
-	transform: scale(1) !important;
+	display: none !important;
 }
 	
 	
@@ -762,6 +762,7 @@ box-sizing: border-box;
 		line-height: 1.3em;
 		list-style: lower-latin;
 		float:left;
+		clear: both;
 	}
 	
 	.cureSteps li ol li{
@@ -843,6 +844,48 @@ box-sizing: border-box;
 	.clear_border{
 		width: 100%;
 		border: 1px solid #fff;
+	}
+	
+	.preventionArea{
+		width: 100%;
+		padding: 0 5%;
+		float: left;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+	}
+	
+	.dexa{
+		width: 100%;
+		padding: 0 5%;
+		float: left;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		text-align: center;
+		margin: 30px 0 15px 0;
+	}
+	
+	.dexa img{
+		width: 100%;
+		max-width: 400px;
+	}
+	
+	.margin_left_no{
+		margin-left: 0 !important;
+	}
+	
+	.back_no{
+		background: none !important;
+		box-shadow: none !important;
+		-webkit-box-shadow: none !important;
+		-moz-box-shadow: none !important;
+	}
+	
+	.bottom_space{
+		padding-bottom: 50px;
+		width: 100%;
+		float: left;
 	}
 @media only screen
 and (max-width : 767px) {
@@ -929,7 +972,7 @@ and (max-width : 767px) {
 	}
 	
 	.stage span{
-		width: 80%;
+		width: 100%;
 		-webkit-transform: scale(1); 
 		-ms-transform: scale(1);
 		 transform: scale(1); 
@@ -993,6 +1036,10 @@ and (max-width : 480px) {
 	
 	.pageHead h1{
 		line-height: 2.4em;
+	}
+	
+	.stage{
+		padding: 0 15%;
 	}
 	
 	/* Chrome, Safari, Opera */ 
@@ -1071,7 +1118,7 @@ and (max-width : 480px) {
 	}
 	
 	.stage h4{
-		font-size: 1.4em;
+		font-size: 1.3em;
 	}
 
 	.bind100 img{
@@ -1126,6 +1173,19 @@ and (max-width : 480px) {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		margin: 0 !important;
+	}
+	
+	.cureStepsPadding{
+		padding: 0 30px !important;
+	}
+	
+	.preventionArea{
+		padding: 0 2%;
+	}
+	
+	.preventionArea  h4 blockquote
+	{
+		font-size: .85em !important;
 	}
 }
 
