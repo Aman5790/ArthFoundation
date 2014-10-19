@@ -887,6 +887,11 @@ box-sizing: border-box;
 		width: 100%;
 		float: left;
 	}
+	
+	 .information{
+		font-size: .7em;
+		color: #fff;
+	 }
 @media only screen
 and (max-width : 767px) {
 	.wrapper{
