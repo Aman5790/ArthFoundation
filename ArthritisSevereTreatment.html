@@ -14,7 +14,9 @@
             document.addEventListener("deviceready", onDeviceRed);
             function onDeviceRed(){
                 $('#lnkContactUs').click(function(e){
-                    window.open(encodeURI(urlContactUs), '_system', 'location=yes')
+                    alert(urlContactUs);
+                    var ref = window.open(urlContactUs, '_system', 'location=yes');
+                    //window.open(encodeURI(urlContactUs), '_system', 'location=yes')
                 });
             }
         }
@@ -46,7 +48,7 @@
                         <li>Exercise advisory</li>
                         <li>Precautions</li>
 						<li>Medicines</li>
-						<li>Consult and Orthopedic Specialist ASAP</li>
+						<li>Consult an Orthopedic Specialist ASAP</li>
 						<li class="list_none">Want suggestions about Ortho Surgeons in your City? <a id="lnkContactUs" href="#">Click here</a> </li>
 					</ol>
 				</div>

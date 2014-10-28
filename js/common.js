@@ -1,2 +1,2 @@
 var urlContactUs= "http://www.arthfound.org/"
-var IsPhoneGAP= false;
+var IsPhoneGAP= true;

@@ -44,7 +44,10 @@ function setQuestion(index){
                 $('#ulActiveQuestionHint li:eq('+(index-1)+')').addClass('active');
                
                 /* Updates questions */
-                $('#question').html(oArthritisQA.QA[index-1].Q);
+                
+                $('#question').stop().css('opacity', '0').html(oArthritisQA.QA[index-1].Q).animate({opacity:1},1000);
+               
+                //$('#question').html(oArthritisQA.QA[index-1].Q);
 
                 /*Initializes Answer if available */
                 if(oArthritisQA.QA[index-1].A != 'NULL'){
