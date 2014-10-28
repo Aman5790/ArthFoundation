@@ -111,8 +111,8 @@
   <!-- BlackBerry-->
   <!--<gap:splash src="splash/bb/splash.png" gap:platform="blackberry" />-->
 
+<gap:plugin name="org.apache.cordova.inappbrowser" />
 
-    
 <feature name="http://api.phonegap.com/1.0/device" />
 <feature name="http://api.phonegap.com/1.0/battery"/>
 <feature name="http://api.phonegap.com/1.0/camera"/>

@@ -14,9 +14,7 @@
             document.addEventListener("deviceready", onDeviceRed);
             function onDeviceRed(){
                 $('#lnkContactUs').click(function(e){
-                    alert(urlContactUs);
-                    var ref = window.open(urlContactUs, '_system', 'location=yes');
-                    //window.open(encodeURI(urlContactUs), '_system', 'location=yes')
+                    window.open(encodeURI(urlContactUs), '_system', 'location=yes')
                 });
             }
         }
