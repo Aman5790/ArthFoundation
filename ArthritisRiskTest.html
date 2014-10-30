@@ -31,7 +31,7 @@
             }
             if(indexQuestion != 1){
                 indexQuestion--;
-                setQuestion(indexQuestion);
+                setQuestion(indexQuestion,'PREVIOUS');
             }
         });
         
@@ -42,7 +42,7 @@
                     if(boolIsSaved){
                         if(! checkLastQuestion()){
                             indexQuestion++;
-                            setQuestion(indexQuestion);
+                            setQuestion(indexQuestion,'NEXT');
                         }
                     }
                 }
@@ -69,7 +69,7 @@
                 var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
 			}
             indexQuestion--;
-            setQuestion(indexQuestion);
+            setQuestion(indexQuestion,'PREVIOUS');
         });
         
         
@@ -78,7 +78,7 @@
                 var boolIsSaved= saveAnswer(indexQuestion,$('#divButtonArea span.pressed').data('ans'));
                 if(boolIsSaved){
                     indexQuestion++;
-                    setQuestion(indexQuestion);
+                    setQuestion(indexQuestion,'NEXT');
                 }
             }
             else{

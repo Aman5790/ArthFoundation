@@ -7,7 +7,7 @@ function ViewOsteoRiskTest(_Model, _Controller){
     try{
         oOsteoQA= this.LoadOsteoQA();
         this.setListActiveQuestionHint();
-        setQuestion(indexQuestion);
+        setQuestion(indexQuestion,'NEXT');
     }
     catch(e){
         
@@ -31,7 +31,7 @@ ViewOsteoRiskTest.prototype = {
 }
 
 
-function setQuestion(index){
+function setQuestion(index,direction){
     if(isNaN(index)){
         
     }
@@ -44,7 +44,15 @@ function setQuestion(index){
                 $('#ulActiveQuestionHint li:eq('+(index-1)+')').addClass('active');
                
                 /* Updates questions */
-                $('#question').html(oOsteoQA.QA[index-1].Q);
+                if(direction == 'PREVIOUS'){
+                    $('#question').stop().css({'opacity':'0','left':'-200px'}).html(oOsteoQA.QA[index-1].Q).animate({opacity:1}, { queue: false, duration: 1000 }).animate({left: "0"}, { queue: false, duration: 1000 });    
+                }
+                else{
+                    $('#question').stop().css({'opacity':'0','right':'-200px'}).html(oOsteoQA.QA[index-1].Q).animate({opacity:1}, { queue: false, duration: 1000 }).animate({right: "0"}, { queue: false, duration: 1000 });
+                }
+                //
+               
+                //$('#question').html(oOsteoQA.QA[index-1].Q);
 
                 /*Initializes Answer if available */
                 if(oOsteoQA.QA[index-1].A != 'NULL'){

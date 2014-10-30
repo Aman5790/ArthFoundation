@@ -31,25 +31,34 @@ ViewArthritisRiskTest.prototype = {
 }
 
 
-function setQuestion(index){
+function setQuestion(index,direction){
     if(isNaN(index)){
-        
     }
     else{
         if(oArthritisQA !=null && oArthritisQA.QA.length>0 ){
            if(oArthritisQA.QA.length >= index){
                
                 /* Updates current question indicator */
+                
                 $('#ulActiveQuestionHint li').removeClass('active');
                 $('#ulActiveQuestionHint li:eq('+(index-1)+')').addClass('active');
                
                 /* Updates questions */
                 
-                $('#question').stop().css('opacity', '0').html(oArthritisQA.QA[index-1].Q).animate({opacity:1},1000);
+                if(direction == 'PREVIOUS'){
+                    $('#question').stop().css({'opacity':'0','left':'-200px'}).html(oArthritisQA.QA[index-1].Q).animate({opacity:1}, { queue: false, duration: 1000 }).animate({left: "0"}, { queue: false, duration: 1000 });    
+                }
+                else{
+                    $('#question').stop().css({'opacity':'0','right':'-200px'}).html(oArthritisQA.QA[index-1].Q).animate({opacity:1}, { queue: false, duration: 1000 }).animate({right: "0"}, { queue: false, duration: 1000 });
+                }
+                
+                //$('#question').stop().css('opacity', '0').html(oArthritisQA.QA[index-1].Q).animate({opacity:1},1000);
                
                 //$('#question').html(oArthritisQA.QA[index-1].Q);
 
-                /*Initializes Answer if available */
+                
+               
+               /*Initializes Answer if available */
                 if(oArthritisQA.QA[index-1].A != 'NULL'){
                     $('#divButtonArea span').removeClass('pressed');
                     $('#divButtonArea span[data-ans="'+oArthritisQA.QA[index-1].A+'"]').addClass('pressed');
