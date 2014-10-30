@@ -46,17 +46,14 @@ function setQuestion(index,direction){
                 /* Updates questions */
                 
                 if(direction == 'PREVIOUS'){
-                    $('#question').stop().css({'opacity':'0','left':'-200px'}).html(oArthritisQA.QA[index-1].Q).animate({opacity:1}, { queue: false, duration: 1000 }).animate({left: "0"}, { queue: false, duration: 1000 });    
+                    $('#question').stop().css({'opacity':'0','left':'-200px','right':'auto'}).html(oArthritisQA.QA[index-1].Q).animate({opacity:1}, { queue: false, duration: 400 }).animate({left: "0"}, { queue: false, duration: 400 });    
                 }
                 else{
-                    $('#question').stop().css({'opacity':'0','right':'-200px'}).html(oArthritisQA.QA[index-1].Q).animate({opacity:1}, { queue: false, duration: 1000 }).animate({right: "0"}, { queue: false, duration: 1000 });
+                    $('#question').stop().css({'opacity':'0','right':'-200px','left':'auto'}).html(oArthritisQA.QA[index-1].Q).animate({opacity:1}, { queue: false, duration: 400 }).animate({right: "0"}, { queue: false, duration: 400 });
                 }
                 
                 //$('#question').stop().css('opacity', '0').html(oArthritisQA.QA[index-1].Q).animate({opacity:1},1000);
                
-                //$('#question').html(oArthritisQA.QA[index-1].Q);
-
-                
                
                /*Initializes Answer if available */
                 if(oArthritisQA.QA[index-1].A != 'NULL'){
