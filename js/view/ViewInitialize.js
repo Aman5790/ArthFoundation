@@ -21,7 +21,7 @@ ViewInitialize.prototype = {
                                           {"Q":"Do you avoid climbing stairs because of pain in Knees / Ankles?","A":"NULL"},\
                                           {"Q":"Is the pain & difficulty in activity been there for more than 3 months?","A":"NULL"},\
                                           {"Q":"Do you feel continuous or intermittent stiffness & swelling in the joints?","A":"NULL"},\
-                                          {"Q":"Is going for family outings and neighborhood place of worship for prayers getting extremely difficult for you?","A":"NULL"},\
+                                          {"Q":"Is going for family outings and neighborhood place of worship getting extremely difficult for you?","A":"NULL"},\
                                           {"Q":"Is sitting on floor & squatting extremely painful?","A":"NULL"}\
                                       ]}'; 
         
