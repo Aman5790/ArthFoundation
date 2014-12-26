@@ -35,7 +35,7 @@ ViewInitialize.prototype = {
                                           {"Q":"Do you suffer frequently with loose motions (caused by chronic gastric diseases like crohn\'s disease or celiac disease)?","A":"NULL"},\
                                           {"Q":"Did you have menopause before the age of 45?","A":"NULL"},\
                                           {"Q":"Have your periods stopped for 12 months or more in life time (other than because of pregnancy)?","A":"NULL"},\
-                                          {"Q":"Have you been regularly consuming medicines for more than 3 years for Epilepsy, Hypothyroidism or chronic gastritis/ulcer?","A":"NULL"}\
+                                          {"Q":"Have you been on long term steroid for more than 3 years for Epilepsy, Hypothyroidism or chronic gastritis / ulcer?","A":"NULL"}\
                                       ]}'; 
         
         
