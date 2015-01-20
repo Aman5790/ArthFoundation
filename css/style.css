@@ -9,6 +9,15 @@ html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre
        url('../fonts/poiretone-regular-webfont.svg') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+	   font-family: 'Monoton';
+  src: url('../fonts/monoton-regular-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/monoton-regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/monoton-regular-webfont.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/monoton-regular-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/monoton-regular-webfont.svg') format('svg'); /* Legacy iOS */
+	   }
+
 body{
 	font-family: 'Poiret-One', Fallback, sans-serif;
 	color: #fff;
@@ -279,32 +288,88 @@ background: #8c7f80;
     animation: movelogo 5s 1;
 	top: 50%;
 	left: 50%;
-	margin-top:-150px;
+	margin-top:-200px;
 	margin-left:-150px
 }
 
 /* Chrome, Safari, Opera */ 
 @-webkit-keyframes movelogo {
     0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
-    25%  {width:300px; height:300px;margin-top:-150px;margin-left:-150px}
-    75%  {width:300px; height:300px;-webkit-transform: rotate(0deg);margin-top:-150px;margin-left:-150px}
-    100% {width:300px; height:300px;-webkit-transform: rotate(360deg);opacity:1;margin-top:-150px;margin-left:-150px}
+    25%  {width:300px; height:300px;margin-top:-200px;margin-left:-150px}
+    75%  {width:300px; height:300px;-webkit-transform: rotate(0deg);margin-top:-200px;margin-left:-150px}
+    100% {width:300px; height:300px;-webkit-transform: rotate(360deg);opacity:1;margin-top:-200px;margin-left:-150px}
 }
 
 @-moz-keyframes movelogo {
     0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
-    25%  {width:300px; height:300px;margin-top:-150px;margin-left:-150px}
-    75%  {width:300px; height:300px;-moz-transform: rotate(0deg);margin-top:-150px;margin-left:-150px}
-    100% {width:300px; height:300px;-moz-transform: rotate(360deg);opacity:1;margin-top:-150px;margin-left:-150px}
+    25%  {width:300px; height:300px;margin-top:-200px;margin-left:-150px}
+    75%  {width:300px; height:300px;-moz-transform: rotate(0deg);margin-top:-200px;margin-left:-150px}
+    100% {width:300px; height:300px;-moz-transform: rotate(360deg);opacity:1;margin-top:-200px;margin-left:-150px}
 }
 
 /* Standard syntax */
 @keyframes movelogo {
      0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
-    25%  {width:300px; height:300px;margin-top:-150px;margin-left:-150px}
-    75%  {width:300px; height:300px;transform: rotate(0deg);margin-top:-150px;margin-left:-150px}
-    100% {width:300px; height:300px;transform: rotate(360deg);opacity:1;margin-top:-150px;margin-left:-150px}
+    25%  {width:300px; height:300px;margin-top:-200px;margin-left:-150px}
+    75%  {width:300px; height:300px;transform: rotate(0deg);margin-top:-200px;margin-left:-150px}
+    100% {width:300px; height:300px;transform: rotate(360deg);opacity:1;margin-top:-200px;margin-left:-150px}
 }
+
+
+.night-hotel {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 60px/1 "Monoton", Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 10px rgb(255,255,255) , 0 0 20px rgb(255,255,255) , 0 0 30px rgb(255,255,255) , 0 0 40px rgba(255,0,0,1) , 0 0 70px rgba(252,15,15,1) , 0 0 80px rgba(249,19,19,1) , 0 0 100px rgba(255,22,22,1) , 0 0 150px rgba(249,17,17,1) ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+}
+
+
+.text_logo{
+	font-family: 'Monoton', Fallback, sans-serif;
+	position: absolute;
+	top: 71%;
+	width: 100%;
+	text-align: center;
+	font-size: 40px;
+	text-transform: capitalize;
+	-webkit-animation: logotext 5s 1; /* Chrome, Safari, Opera */ 
+    -moz-animation: logotext 5s 1; /* Chrome, Safari, Opera */ 
+    animation: logotext 5s 1;
+}
+
+.text_logo > pre{
+	font-family: 'Monoton', Fallback, sans-serif;
+}
+
+@-webkit-keyframes logotext {
+    0%   { font-size: 0px;}
+   100% {font-size: 40px;}
+}
+
+@-moz-keyframes logotext {
+    0%   { font-size: 0px;}
+   100% {font-size: 40px;}
+}
+
+/* Standard syntax */
+@keyframes logotext {
+    0%   { font-size: 0px;}
+   100% {font-size: 40px;}
+}
+
+
+
+
 .buttonArea{
 	text-align: center;
 	position: relative;
@@ -999,6 +1064,27 @@ and (max-width : 767px) {
 	.opaque{
 		display: none !important;
 	}
+	
+	.text_logo{
+		top: 69%;
+		font-size: 38px;
+	}
+	
+	@-webkit-keyframes logotext {
+    0%   { font-size: 0px;}
+   100% {font-size: 38px;}
+	}
+
+	@-moz-keyframes logotext {
+		0%   { font-size: 0px;}
+	   100% {font-size: 38px;}
+	}
+
+	/* Standard syntax */
+	@keyframes logotext {
+		0%   { font-size: 0px;}
+	   100% {font-size: 38px;}
+	}
 }
 
 
@@ -1025,7 +1111,7 @@ and (max-width : 480px) {
 	.logo{
 		width:200px;
 		height: 200px;
-		margin-top:-100px;
+		margin-top:-150px;
 		margin-left:-100px
 	}
 	
@@ -1063,24 +1149,24 @@ and (max-width : 480px) {
 	/* Chrome, Safari, Opera */ 
 @-webkit-keyframes movelogo {
     0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
-    25%  {width:200px; height:200px;margin-top:-100px;margin-left:-100px}
-    75%  {width:200px; height:200px;-webkit-transform: rotate(0deg);margin-top:-100px;margin-left:-100px}
-    100% {width:200px; height:200px;-webkit-transform: rotate(360deg);opacity:1;margin-top:-100px;margin-left:-100px}
+    25%  {width:200px; height:200px;margin-top:-150px;margin-left:-100px}
+    75%  {width:200px; height:200px;-webkit-transform: rotate(0deg);margin-top:-150px;margin-left:-100px}
+    100% {width:200px; height:200px;-webkit-transform: rotate(360deg);opacity:1;margin-top:-150px;margin-left:-100px}
 }
 
 @-moz-keyframes movelogo {
     0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
-    25%  {width:200px; height:200px;margin-top:-100px;margin-left:-100px}
-    75%  {width:200px; height:200px;-moz-transform: rotate(0deg);margin-top:-100px;margin-left:-100px}
-    100% {width:200px; height:200px;-moz-transform: rotate(360deg);opacity:1;margin-top:-100px;margin-left:-100px}
+    25%  {width:200px; height:200px;margin-top:-150px;margin-left:-100px}
+    75%  {width:200px; height:200px;-moz-transform: rotate(0deg);margin-top:-150px;margin-left:-100px}
+    100% {width:200px; height:200px;-moz-transform: rotate(360deg);opacity:1;margin-top:-150px;margin-left:-100px}
 }
 
 /* Standard syntax */
 @keyframes movelogo {
      0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
-    25%  {width:200px; height:200px;margin-top:-100px;margin-left:-100px}
-    75%  {width:200px; height:200px;transform: rotate(0deg);margin-top:-100px;margin-left:-100px}
-    100% {width:200px; height:200px;transform: rotate(360deg);opacity:1;margin-top:-100px;margin-left:-100px}
+    25%  {width:200px; height:200px;margin-top:-150px;margin-left:-100px}
+    75%  {width:200px; height:200px;transform: rotate(0deg);margin-top:-150px;margin-left:-100px}
+    100% {width:200px; height:200px;transform: rotate(360deg);opacity:1;margin-top:-150px;margin-left:-100px}
 }
 	.button {
 		font-size: 30px;
@@ -1212,6 +1298,27 @@ and (max-width : 480px) {
 	.preventionArea  h4 blockquote
 	{
 		font-size: .85em !important;
+	}
+	
+	.text_logo{
+		top: 70%;
+		font-size: 35px;
+	}
+	
+	@-webkit-keyframes logotext {
+		0%   { font-size: 0px;}
+	   100% {font-size: 35px;}
+	}
+
+	@-moz-keyframes logotext {
+		0%   { font-size: 0px;}
+	   100% {font-size: 35px;}
+	}
+
+	/* Standard syntax */
+	@keyframes logotext {
+		0%   { font-size: 0px;}
+	   100% {font-size: 35px;}
 	}
 }
 
