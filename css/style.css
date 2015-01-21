@@ -342,9 +342,9 @@ background: #8c7f80;
 	text-align: center;
 	font-size: 40px;
 	text-transform: capitalize;
-	-webkit-animation: logotext 5s 1; /* Chrome, Safari, Opera */ 
-    -moz-animation: logotext 5s 1; /* Chrome, Safari, Opera */ 
-    animation: logotext 5s 1;
+	-webkit-animation: logotext 2s 1; /* Chrome, Safari, Opera */ 
+    -moz-animation: logotext 2s 1; /* Chrome, Safari, Opera */ 
+    animation: logotext 2s 1;
 }
 
 .text_logo > pre{
@@ -367,8 +367,37 @@ background: #8c7f80;
    100% {font-size: 40px;}
 }
 
+	@-webkit-keyframes logotexttab {
+		0%   { font-size: 0px;}
+	   100% {font-size: 38px;}
+	}
 
+	@-moz-keyframes logotexttab {
+		0%   { font-size: 0px;}
+	   100% {font-size: 38px;}
+	}
 
+	/* Standard syntax */
+	@keyframes logotexttab {
+		0%   { font-size: 0px;}
+	   100% {font-size: 38px;}
+	}
+	
+	@-webkit-keyframes logotextmob {
+		0%   { font-size: 0px;}
+	   100% {font-size: 35px;}
+	}
+
+	@-moz-keyframes logotextmob {
+		0%   { font-size: 0px;}
+	   100% {font-size: 35px;}
+	}
+
+	/* Standard syntax */
+	@keyframes logotextmob {
+		0%   { font-size: 0px;}
+	   100% {font-size: 35px;}
+	}
 
 .buttonArea{
 	text-align: center;
@@ -397,6 +426,10 @@ background: #8c7f80;
 	margin: 4% 0;
 	-webkit-appearance: none;
 }
+
+	.welcome_fnt{
+		font-size: 30px !important;
+	}
 
 .button span {
 	min-width: 250px;
@@ -855,6 +888,10 @@ box-sizing: border-box;
 		margin-top: 20px;
 	}
 	
+	.spc_top10{
+		margin-top: 10px;
+	}
+	
 	.flt_lft{
 		float: left;
 	}
@@ -969,6 +1006,29 @@ box-sizing: border-box;
 		float: left;
 		width: 100%;
 	 }
+	 	/* Chrome, Safari, Opera */ 
+@-webkit-keyframes movelogomob {
+    0%   { width:0; height:0; opacity:0.1; margin-top:0px; margin-left:0px}
+    25%  {width:200px; height:200px;margin-top:-150px;margin-left:-100px}
+    75%  {width:200px; height:200px;-webkit-transform: rotate(0deg);margin-top:-150px;margin-left:-100px}
+    100% {width:200px; height:200px;-webkit-transform: rotate(360deg);opacity:1;margin-top:-150px;margin-left:-100px}
+}
+
+@-moz-keyframes movelogomob {
+    0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
+    25%  {width:200px; height:200px;margin-top:-150px;margin-left:-100px}
+    75%  {width:200px; height:200px;-moz-transform: rotate(0deg);margin-top:-150px;margin-left:-100px}
+    100% {width:200px; height:200px;-moz-transform: rotate(360deg);opacity:1;margin-top:-150px;margin-left:-100px}
+}
+
+/* Standard syntax */
+@keyframes movelogomob {
+     0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
+    25%  {width:200px; height:200px;margin-top:-150px;margin-left:-100px}
+    75%  {width:200px; height:200px;transform: rotate(0deg);margin-top:-150px;margin-left:-100px}
+    100% {width:200px; height:200px;transform: rotate(360deg);opacity:1;margin-top:-150px;margin-left:-100px}
+}
+
 @media only screen
 and (max-width : 767px) {
 	.wrapper{
@@ -1068,23 +1128,12 @@ and (max-width : 767px) {
 	.text_logo{
 		top: 69%;
 		font-size: 38px;
+		-webkit-animation: logotexttab 2s 1; /* Chrome, Safari, Opera */ 
+		-moz-animation: logotexttab 2s 1; /* Chrome, Safari, Opera */ 
+		animation: logotexttab 2s 1;
 	}
 	
-	@-webkit-keyframes logotext {
-    0%   { font-size: 0px;}
-   100% {font-size: 38px;}
-	}
-
-	@-moz-keyframes logotext {
-		0%   { font-size: 0px;}
-	   100% {font-size: 38px;}
-	}
-
-	/* Standard syntax */
-	@keyframes logotext {
-		0%   { font-size: 0px;}
-	   100% {font-size: 38px;}
-	}
+	
 }
 
 
@@ -1109,10 +1158,13 @@ and (max-width : 480px) {
 	}
 	
 	.logo{
-		width:200px;
+		width: 200px;
 		height: 200px;
 		margin-top:-150px;
-		margin-left:-100px
+		margin-left:-100px;
+		-webkit-animation: movelogomob 5s 1; /* Chrome, Safari, Opera */ 
+		-moz-animation: movelogomob 5s 1; /* Chrome, Safari, Opera */ 
+		animation: movelogomob 5s 1;
 	}
 	
 	p {
@@ -1146,32 +1198,16 @@ and (max-width : 480px) {
 		padding: 0 15%;
 	}
 	
-	/* Chrome, Safari, Opera */ 
-@-webkit-keyframes movelogo {
-    0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
-    25%  {width:200px; height:200px;margin-top:-150px;margin-left:-100px}
-    75%  {width:200px; height:200px;-webkit-transform: rotate(0deg);margin-top:-150px;margin-left:-100px}
-    100% {width:200px; height:200px;-webkit-transform: rotate(360deg);opacity:1;margin-top:-150px;margin-left:-100px}
-}
 
-@-moz-keyframes movelogo {
-    0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
-    25%  {width:200px; height:200px;margin-top:-150px;margin-left:-100px}
-    75%  {width:200px; height:200px;-moz-transform: rotate(0deg);margin-top:-150px;margin-left:-100px}
-    100% {width:200px; height:200px;-moz-transform: rotate(360deg);opacity:1;margin-top:-150px;margin-left:-100px}
-}
-
-/* Standard syntax */
-@keyframes movelogo {
-     0%   { width:0; height:0; opacity:0.1;margin-top:0px;margin-left:0px}
-    25%  {width:200px; height:200px;margin-top:-150px;margin-left:-100px}
-    75%  {width:200px; height:200px;transform: rotate(0deg);margin-top:-150px;margin-left:-100px}
-    100% {width:200px; height:200px;transform: rotate(360deg);opacity:1;margin-top:-150px;margin-left:-100px}
-}
 	.button {
 		font-size: 30px;
 		margin: 2% 0;
 	}
+	
+	.welcome_fnt{
+		font-size: 20px !important;
+	}
+	
 	.button span {
 		min-width: 185px;
 		display: inline-block;
@@ -1303,23 +1339,12 @@ and (max-width : 480px) {
 	.text_logo{
 		top: 70%;
 		font-size: 35px;
+		-webkit-animation: logotextmob 2s 1; /* Chrome, Safari, Opera */ 
+		-moz-animation: logotextmob 2s 1; /* Chrome, Safari, Opera */ 
+		animation: logotextmob 2s 1;
 	}
 	
-	@-webkit-keyframes logotext {
-		0%   { font-size: 0px;}
-	   100% {font-size: 35px;}
-	}
-
-	@-moz-keyframes logotext {
-		0%   { font-size: 0px;}
-	   100% {font-size: 35px;}
-	}
-
-	/* Standard syntax */
-	@keyframes logotext {
-		0%   { font-size: 0px;}
-	   100% {font-size: 35px;}
-	}
+	
 }
 
  
