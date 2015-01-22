@@ -68,6 +68,10 @@ font-size: 1.5em;
 	font-size: 15px;
 }
 
+.fnt_arial{
+	font-family: 'Arial';
+}
+
 .homeTop{
 	width: 150px;
 	height: 150px;
@@ -1213,7 +1217,7 @@ and (max-width : 480px) {
 	}
 	
 	.welcome_fnt{
-		font-size: 20px !important;
+		font-size: 23px !important;
 	}
 	
 	.button span {
