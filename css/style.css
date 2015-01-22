@@ -60,6 +60,14 @@ h4{
 font-size: 1.5em;
 }
 
+.fnt_wt_nrml{
+	font-weight: normal !important;
+}
+
+.fnt_s15{
+	font-size: 15px;
+}
+
 .homeTop{
 	width: 150px;
 	height: 150px;
@@ -326,8 +334,8 @@ background: #8c7f80;
   text-align: center;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
-  text-shadow: 0 0 10px rgb(255,255,255) , 0 0 20px rgb(255,255,255) , 0 0 30px rgb(255,255,255) , 0 0 40px rgba(255,0,0,1) , 0 0 70px rgba(252,15,15,1) , 0 0 80px rgba(249,19,19,1) , 0 0 100px rgba(255,22,22,1) , 0 0 150px rgba(249,17,17,1) ;
-  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  /*text-shadow: 0 0 10px rgb(255,255,255) , 0 0 20px rgb(255,255,255) , 0 0 30px rgb(255,255,255) , 0 0 40px rgba(255,0,0,1) , 0 0 70px rgba(252,15,15,1) , 0 0 80px rgba(249,19,19,1) , 0 0 100px rgba(255,22,22,1) , 0 0 150px rgba(249,17,17,1) ;
+  */-webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
   -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
   -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
   transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
