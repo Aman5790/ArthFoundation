@@ -7,6 +7,7 @@
     <script type="text/javascript" src="js/utilities/jquery.js"></script>
     <script>
     $(document).ready(function(){
+	$('#diseaseTimerSix, #diseaseTimerThree').hide();
         if (window.location.search.split('?').length > 1) {
             var param = window.location.search.split('?')[1];
             var key = param.split('=')[0];
@@ -26,6 +27,7 @@
                     $('#imgFit,#imgModerate,#imgSevere').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
                     $('#txtPrevention').addClass('hide');
+                    $('#diseaseTimerThree').show();
                     treatmentURL= "ArthritisMildTreatment.html";
                     break;
                 case 'MILDTOMOD':
@@ -33,6 +35,7 @@
                     $('#imgFit,#imgMild,#imgSevere').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
                     $('#txtPrevention').addClass('hide');
+		    $('#diseaseTimerThree').show();
                     treatmentURL= "ArthritisModerateTreatment.html";
                     break;
                 case 'MODERATE':
@@ -40,6 +43,7 @@
                     $('#imgFit,#imgMild,#imgSevere').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
                     $('#txtPrevention').addClass('hide');
+		    $('#diseaseTimerSix').show();
                     treatmentURL= "ArthritisModerateTreatment.html";
                     break;
                 case 'MODTOSEV':
@@ -47,6 +51,7 @@
                     $('#imgFit,#imgModerate,#imgMild').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
                     $('#txtPrevention').addClass('hide');
+		    $('#diseaseTimerSix').show();
                     treatmentURL= "ArthritisSevereTreatment.html";
                     break;
                 case 'SEVERE':
@@ -54,6 +59,7 @@
                     $('#imgFit,#imgModerate,#imgMild').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
                     $('#txtPrevention').addClass('hide');
+		    $('#diseaseTimerSix').show();
                     treatmentURL= "ArthritisSevereTreatment.html";
                     break;
                 default:
@@ -95,6 +101,9 @@
                 <span id="spModToSev" class="orange"><h4>Moderate to Severe</h4></span>
 				<span id="spSevere" class="red"><h4>Severe</h4></span>
 			</div>
+			
+			<i id="diseaseTimerSix" class="center wid_100 flt_lft mrgn20">(The symptoms should persists for more than Six months)</i>
+			<i id="diseaseTimerThree" class="center wid_100 flt_lft mrgn20">(The symptoms should persists for more than Three months)</i>
 			<div id="divImage" class="bind100 center">
                 <img id="imgFit" src="assets/fit.png" class="" />
 				<img id="imgMild" src="assets/mild.png"  class="" />

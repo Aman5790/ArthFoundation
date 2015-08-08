@@ -166,60 +166,76 @@ function calculateArthritisStage(){
     }
     else if(mildCounter>=1 && modCounter==0 && sevCounter==0){
         return "Mild";
-    } 
-    else if(modCounter=1 && sevCounter==0){
-        return "MildToMod";
     }
-    else if(modCounter>=2 && mildCounter==0 && sevCounter==0){
-        return "MildToMod";
-    }
-    else if(modCounter>=2 && mildCounter>=1 && sevCounter==0){
-        return "Moderate";
-    }
-    else if(sevCounter>=1 && mildCounter==0 && modCounter==0){
-        return "ModToSev";
-    }
-    else if(sevCounter==2 && mildCounter>=1){
-        return "Severe";
-    }
-    else if(sevCounter==2 && modCounter>=1){
-        return "Severe";
-    }
-    else{
+    else if(mildCounter==1 && modCounter==1 && sevCounter==0){
         return "MildToMod";
     }    
-}
-
-
-//function calculateArthritisStageOld(){
-//    var arrArthritisQA= oArthritisQA.QA;
-//    for(var iQuesNo=arrArthritisQA.length -1; iQuesNo>=0; iQuesNo--){
-//        switch(iQuesNo){
-//        
-//            case 8:
-//            case 7:
-//            case 6:
-//                    if(arrArthritisQA[iQuesNo].A == '1'){
-//                        return "Severe";
-//                    }
-//                    break;
-//            case 5:
-//            case 4:
-//            case 3:
-//                    if(arrArthritisQA[iQuesNo].A == '1'){
-//                        return "Moderate";
-//                    }
-//                    break;
-//            case 2:
-//            case 1:
-//            case 0:
-//                    if(arrArthritisQA[iQuesNo].A == '1'){
-//                        return "Mild";
-//                    }
-//                    break;
-//            default:
-//                return null;
-//                    break;
-//        }
-//    }
+    else if(mildCounter==2 && modCounter==1 && sevCounter==0){
+        return "MildToMod";
+    }
+    else if(mildCounter==3 && modCounter==2 && sevCounter==0){
+        return "Moderate";
+    }
+    else if(mildCounter==0 && modCounter==1 && sevCounter==0){
+        return "MildToMod";
+    }
+    else if(mildCounter==0 && modCounter>1 && sevCounter==0){
+        return "Moderate";
+    }
+    else if(mildCounter==0 && modCounter==1 && sevCounter==1){
+        return "ModToSev";
+    }    
+    else if(mildCounter==0 && modCounter==2 && sevCounter==1){
+        return "ModToSev";
+    }    
+    else if(mildCounter==0 && modCounter>2 && sevCounter==1){
+        return "Severe";
+    }    
+    else if(sevCounter==1 && mildCounter==0 && modCounter==0){
+        return "Moderate";
+    }    
+    else if(sevCounter==2 && mildCounter==0 && modCounter==0){
+        return "ModToSev";
+    }    
+    else if(mildCounter==1 && sevCounter==1){
+        return "Moderate";
+    }    
+    else if(mildCounter==2 && sevCounter==1){
+        return "ModToSev";
+    }    
+    else if(mildCounter==3 && sevCounter==2){
+        return "Severe";
+    }    
+    else{
+        return "MildToMod";
+    }
+    
+//if(mildCounter==0 && modCounter==0 && sevCounter==0){
+//	return "Fit";
 //}
+//else if(mildCounter>=1 && modCounter==0 && sevCounter==0){
+//	return "Mild";
+//} 
+//else if(modCounter=1 && sevCounter==0){
+//	return "MildToMod";
+//}
+//else if(modCounter>=2 && mildCounter==0 && sevCounter==0){
+//	return "MildToMod";
+//}
+//else if(modCounter>=2 && mildCounter>=1 && sevCounter==0){
+//	return "Moderate";
+//}
+//else if(sevCounter>=1 && mildCounter==0 && modCounter==0){
+//	return "ModToSev";
+//}
+//else if(sevCounter==2 && mildCounter>=1){
+//	return "Severe";
+//}
+//else if(sevCounter==2 && modCounter>=1){
+//	return "Severe";
+//}
+//else{
+//	return "MildToMod";
+//}     
+    
+}
