@@ -125,35 +125,101 @@ function calculateArthritisTestResult(){
     return false;
 }
 
+
 function calculateArthritisStage(){
+    var mildCounter=parseInt(0);
+    var modCounter=parseInt(0);
+    var sevCounter=parseInt(0);
     var arrArthritisQA= oArthritisQA.QA;
-    for(var iQuesNo=arrArthritisQA.length -1; iQuesNo>=0; iQuesNo--){
+    for(var iQuesNo=0; iQuesNo<=arrArthritisQA.length -1; iQuesNo++){
         switch(iQuesNo){
         
-            case 8:
-            case 7:
+            case 0:
+            case 1:
+            case 2:
+                    if(arrArthritisQA[iQuesNo].A == '1'){
+                        mildCounter++;
+                    }
+                    break;
+            case 3:
+            case 4:
+            case 5:
             case 6:
                     if(arrArthritisQA[iQuesNo].A == '1'){
-                        return "Severe";
+                        modCounter++;
                     }
                     break;
-            case 5:
-            case 4:
-            case 3:
+            case 7:
+            case 8:
                     if(arrArthritisQA[iQuesNo].A == '1'){
-                        return "Moderate";
-                    }
-                    break;
-            case 2:
-            case 1:
-            case 0:
-                    if(arrArthritisQA[iQuesNo].A == '1'){
-                        return "Mild";
+                        sevCounter++;
                     }
                     break;
             default:
-                return null;
+                    return null;
                     break;
         }
     }
+    
+    if(mildCounter==0 && modCounter==0 && sevCounter==0){
+        return "Fit";
+    }
+    else if(mildCounter>=1 && modCounter==0 && sevCounter==0){
+        return "Mild";
+    } 
+    else if(modCounter=1 && sevCounter==0){
+        return "MildToMod";
+    }
+    else if(modCounter>=2 && mildCounter==0 && sevCounter==0){
+        return "MildToMod";
+    }
+    else if(modCounter>=2 && mildCounter>=1 && sevCounter==0){
+        return "Moderate";
+    }
+    else if(sevCounter>=1 && mildCounter==0 && modCounter==0){
+        return "ModToSev";
+    }
+    else if(sevCounter==2 && mildCounter>=1){
+        return "Severe";
+    }
+    else if(sevCounter==2 && modCounter>=1){
+        return "Severe";
+    }
+    else{
+        return "MildToMod";
+    }    
 }
+
+
+//function calculateArthritisStageOld(){
+//    var arrArthritisQA= oArthritisQA.QA;
+//    for(var iQuesNo=arrArthritisQA.length -1; iQuesNo>=0; iQuesNo--){
+//        switch(iQuesNo){
+//        
+//            case 8:
+//            case 7:
+//            case 6:
+//                    if(arrArthritisQA[iQuesNo].A == '1'){
+//                        return "Severe";
+//                    }
+//                    break;
+//            case 5:
+//            case 4:
+//            case 3:
+//                    if(arrArthritisQA[iQuesNo].A == '1'){
+//                        return "Moderate";
+//                    }
+//                    break;
+//            case 2:
+//            case 1:
+//            case 0:
+//                    if(arrArthritisQA[iQuesNo].A == '1'){
+//                        return "Mild";
+//                    }
+//                    break;
+//            default:
+//                return null;
+//                    break;
+//        }
+//    }
+//}

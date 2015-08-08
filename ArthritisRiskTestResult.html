@@ -17,26 +17,40 @@
             $('#divButtonArea a').removeClass('hide');
             switch(value.toUpperCase()){
                 case 'FIT':
-                    $('#spMild,#spModerate,#spSevere').addClass('opaque');
+                    $('#spMild,#spMildToMod,#spModerate,#spModToSev,#spSevere').addClass('opaque');
                     $('#imgMild,#imgModerate,#imgSevere').addClass('hide');
                     $('#lnkTreatment').addClass('hide');
                     break;
                 case 'MILD':
-                    $('#spFit,#spModerate,#spSevere').addClass('opaque');
+                    $('#spFit,#spMildToMod,#spModerate,#spModToSev,#spSevere').addClass('opaque');
                     $('#imgFit,#imgModerate,#imgSevere').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
                     $('#txtPrevention').addClass('hide');
                     treatmentURL= "ArthritisMildTreatment.html";
                     break;
-                case 'MODERATE':
-                    $('#spFit,#spMild,#spSevere').addClass('opaque');
+                case 'MILDTOMOD':
+                    $('#spFit,#spMild,#spModerate,#spModToSev,#spSevere').addClass('opaque');
                     $('#imgFit,#imgMild,#imgSevere').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
                     $('#txtPrevention').addClass('hide');
                     treatmentURL= "ArthritisModerateTreatment.html";
                     break;
+                case 'MODERATE':
+                    $('#spFit,#spMild,#spMildToMod,#spModToSev,#spSevere').addClass('opaque');
+                    $('#imgFit,#imgMild,#imgSevere').addClass('hide');
+                    $('#lnkPrevention').addClass('hide');
+                    $('#txtPrevention').addClass('hide');
+                    treatmentURL= "ArthritisModerateTreatment.html";
+                    break;
+                case 'MODTOSEV':
+                    $('#spFit,#spMildToMod,#spModerate,#spMild,#spSevere').addClass('opaque');
+                    $('#imgFit,#imgModerate,#imgMild').addClass('hide');
+                    $('#lnkPrevention').addClass('hide');
+                    $('#txtPrevention').addClass('hide');
+                    treatmentURL= "ArthritisSevereTreatment.html";
+                    break;
                 case 'SEVERE':
-                    $('#spFit,#spModerate,#spMild').addClass('opaque');
+                    $('#spFit,#spMildToMod,#spModerate,#spModToSev,#spMild').addClass('opaque');
                     $('#imgFit,#imgModerate,#imgMild').addClass('hide');
                     $('#lnkPrevention').addClass('hide');
                     $('#txtPrevention').addClass('hide');
@@ -76,7 +90,9 @@
 			<div id="divStage" class="stage">
 				<span id="spFit" class="green"><h4>You appear to be <b>Fit</b></h4></span>
 				<span id="spMild" class="sky"><h4>Mild</h4></span>
+                <span id="spMildToMod" class="sky"><h4>Mild to Moderate</h4></span>
 				<span id="spModerate" class="orange"><h4>Moderate</h4></span>
+                <span id="spModToSev" class="orange"><h4>Moderate to Severe</h4></span>
 				<span id="spSevere" class="red"><h4>Severe</h4></span>
 			</div>
 			<div id="divImage" class="bind100 center">
